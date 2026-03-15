@@ -213,6 +213,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 .rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease;}
 .rv.in{opacity:1;transform:none;}
 
+/* ── LAPTOP (petit écran desktop) ── */
+@media(max-width:1280px){
+  .sl{width:30%;padding:80px 32px;}
+  .sl-ttl{font-size:clamp(2rem,3vw,3rem);}
+  .sl-menu{font-size:.65rem;letter-spacing:.14em;}
+  .arch{padding:70px 48px 70px 80px;}
+}
+
 /* ── MOBILE TABLET ── */
 @media(max-width:880px){
   .slide{flex-direction:column;min-height:auto;}
@@ -444,7 +452,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 <!-- ══ VOLS & TRANSPORT ══ -->
 <section id="vols" class="slide">
   <div class="sl rv">
-    <span class="sl-ttl" style="font-family:'Cormorant Garamond',serif;letter-spacing:.12em;font-size:clamp(1.8rem,3.2vw,3.4rem);">INFORMATIONS</span>
+    <span class="sl-ttl" style="font-family:'Cormorant Garamond',serif;letter-spacing:.08em;font-size:clamp(1.6rem,2.4vw,3rem);">INFORMATIONS</span>
     <span style="font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:10px;display:block;">Vols & Transports</span>
     <ul class="sl-menu">
       <li>Mairie</li><li>Le Mariage</li><li>Shabbat Hatan</li><li class="on">Informations</li><li>RSVP</li>
@@ -470,7 +478,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 <!-- ══ HÔTEL DES MARIÉS ══ -->
 <section id="hotel-maries" class="slide">
   <div class="sl rv">
-    <span class="sl-ttl" style="font-family:'Cormorant Garamond',serif;letter-spacing:.12em;font-size:clamp(1.8rem,3.2vw,3.4rem);">INFORMATIONS</span>
+    <span class="sl-ttl" style="font-family:'Cormorant Garamond',serif;letter-spacing:.08em;font-size:clamp(1.6rem,2.4vw,3rem);">INFORMATIONS</span>
     <span style="font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:10px;display:block;">Hébergement</span>
     <ul class="sl-menu">
       <li>Mairie</li><li>Le Mariage</li><li>Shabbat Hatan</li><li class="on">Informations</li><li>RSVP</li>
@@ -505,7 +513,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 <!-- ══ HÔTELS PARTENAIRES ══ -->
 <section id="hotels" class="slide">
   <div class="sl rv">
-    <span class="sl-ttl" style="font-family:'Cormorant Garamond',serif;letter-spacing:.12em;font-size:clamp(1.8rem,3.2vw,3.4rem);">INFORMATIONS</span>
+    <span class="sl-ttl" style="font-family:'Cormorant Garamond',serif;letter-spacing:.08em;font-size:clamp(1.6rem,2.4vw,3rem);">INFORMATIONS</span>
     <span style="font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:10px;display:block;">Hôtels Partenaires</span>
     <ul class="sl-menu">
       <li>Mairie</li><li>Le Mariage</li><li>Shabbat Hatan</li><li class="on">Informations</li><li>RSVP</li>
