@@ -577,7 +577,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 
 <script>
 // ─── GOOGLE APPS SCRIPT URL ───
-// Remplace cette URL par ton URL de déploiement Apps Script
+// ⚠️ COLLER VOTRE URL GOOGLE APPS SCRIPT ICI ⚠️
 const APPS_SCRIPT_URL = 'APPS_SCRIPT_URL_HERE';
 
 // ─── COUNTDOWN ───
@@ -603,27 +603,35 @@ function getTogVal(evRow){
 
 // ─── SUBMIT RSVP ───
 async function submitRSVP(){
+  const btn=document.getElementById('sbmBtn');
+  // Anti-double clic
+  if(btn.disabled) return;
+
   const nom=document.getElementById('fN').value.trim();
   const prenom=document.getElementById('fP').value.trim();
   const email=document.getElementById('fE').value.trim();
+
   if(!nom||!prenom){
     showErr('Merci de renseigner votre nom et prénom.');
     return;
   }
+
   const rows=document.querySelectorAll('.ev-row');
   const data={
-    nom,prenom,email,
+    nom:nom,
+    prenom:prenom,
+    email:email,
     mairie:     getTogVal(rows[0]),
     afterMairie:getTogVal(rows[1]),
     houppa:     getTogVal(rows[2]),
     shabbatVen: getTogVal(rows[3]),
     shabbatSam: getTogVal(rows[4]),
     car:        getTogVal(rows[5]),
-    allergies:  document.getElementById('fA').value.trim(),
-    date:       new Date().toLocaleString('fr-FR')
+    allergies:  document.getElementById('fA').value.trim()
   };
 
-  document.getElementById('sbmBtn').disabled=true;
+  // Désactiver le bouton + état chargement
+  btn.disabled=true;
   document.getElementById('rsvpErr').style.display='none';
 
   // Si l'URL Apps Script est configurée
@@ -631,18 +639,22 @@ async function submitRSVP(){
     document.getElementById('rsvpForm').style.display='none';
     document.getElementById('rsvpSending').style.display='block';
     try{
-      await fetch(APPS_SCRIPT_URL,{
+      const resp=await fetch(APPS_SCRIPT_URL,{
         method:'POST',
-        mode:'no-cors',
-        headers:{'Content-Type':'application/json'},
+        headers:{'Content-Type':'text/plain;charset=utf-8'},
         body:JSON.stringify(data)
       });
-      document.getElementById('rsvpSending').style.display='none';
-      document.getElementById('rsvpOk').style.display='block';
+      const result=await resp.json();
+      if(result.status==='success'){
+        document.getElementById('rsvpSending').style.display='none';
+        document.getElementById('rsvpOk').style.display='block';
+      } else {
+        throw new Error(result.message||'Erreur serveur');
+      }
     }catch(e){
       document.getElementById('rsvpSending').style.display='none';
       document.getElementById('rsvpForm').style.display='block';
-      document.getElementById('sbmBtn').disabled=false;
+      btn.disabled=false;
       showErr('Une erreur est survenue. Merci de réessayer ou de nous contacter directement.');
     }
   } else {
