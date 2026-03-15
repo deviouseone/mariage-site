@@ -103,8 +103,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 #hero{background:var(--taupe);padding-top:60px;animation:heroIn .8s ease .8s both;}@keyframes heroIn{from{opacity:.4}to{opacity:1}}
 #hero .arch{background:#FFFEFC;align-items:center;text-align:center;}
 .h-tag{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brown-lt);margin-bottom:24px;display:block;}
-.h-names{font-family:'Montserrat',sans-serif;font-size:clamp(3rem,5vw,5.5rem);font-weight:200;line-height:.92;color:var(--brown);letter-spacing:.12em;text-transform:uppercase;}
-.h-amp{display:block;font-style:italic;font-size:clamp(3rem,5vw,5.5rem);color:var(--brown-lt);margin:.18em 0;}
+.h-names{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,4.2rem);font-weight:300;line-height:.92;color:var(--brown);letter-spacing:.12em;text-transform:uppercase;}
+.h-amp{display:block;font-style:normal;font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,4.2rem);color:var(--brown-lt);margin:.18em 0;}
 .h-div{width:55px;height:1px;background:var(--line);margin:32px auto;}
 .h-date{font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--text-md);margin-bottom:8px;}
 .h-lieu{font-family:'Playfair Display',serif;font-size:1.3rem;font-style:italic;color:var(--brown-md);}
@@ -112,9 +112,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 /* Countdown */
 .cd{display:flex;gap:28px;justify-content:center;margin-top:36px;}
 .cd-u{text-align:center;}
-.cd-n{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,5.5vw,5.5rem);font-weight:300;color:var(--brown);display:block;line-height:1;}
-.cd-l{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brown-lt);margin-top:5px;display:block;}
-.cd-dt{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--line);align-self:center;margin-top:-16px;}
+.cd-n{font-family:'Playfair Display',serif;font-size:clamp(4.5rem,7vw,7rem);font-weight:300;color:var(--brown);display:block;line-height:1;}
+.cd-l{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brown-lt);margin-top:8px;display:block;}
+.cd-dt{font-family:'Playfair Display',serif;font-size:3rem;color:var(--line);align-self:center;margin-top:-16px;}
 
 /* ── TITRES DE SECTION ── */
 .sec-t{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.2vw,3.4rem);font-weight:300;color:var(--brown);margin-bottom:24px;line-height:1.1;}
@@ -136,7 +136,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 .inv-cp{display:flex;align-items:center;justify-content:center;gap:24px;margin:24px 0;}
 .inv-nm{font-family:'Playfair Display',serif;font-size:clamp(3rem,4.8vw,5.2rem);font-weight:300;color:var(--brown);line-height:1;}
 .inv-hb{font-family:'Playfair Display',serif;font-size:2.6rem;color:var(--brown-lt);margin-top:10px;display:block;text-align:center;letter-spacing:.04em;line-height:1.2;}
-.inv-\&{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-style:italic;color:var(--line);}
+.inv-\&{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-style:normal;color:var(--line);}
 .inv-div{width:44px;height:1px;background:var(--line);margin:18px auto;}
 .inv-cd{font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--brown);display:block;}
 .inv-hb2{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brown-lt);margin:5px 0;display:block;}
@@ -374,11 +374,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
     <span style="font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brown-lt);display:block;margin-bottom:18px;">CÉRÉMONIE CIVILE</span>
     <span class="big-h" style="font-size:clamp(4rem,6vw,7rem);">14h00</span>
     <div style="width:40px;height:1px;background:var(--line);margin:20px auto;"></div>
-    <span style="font-family:'Playfair Display',serif;font-size:clamp(1rem,1.8vw,1.3rem);color:var(--brown-md);display:block;margin-bottom:6px;">Mairie de Neuilly-sur-Seine</span>
+    <span style="font-family:'Playfair Display',serif;font-size:clamp(1rem,1.8vw,1.3rem);color:var(--text-md);display:block;margin-bottom:6px;">Mairie de Neuilly-sur-Seine</span>
     <span style="font-size:.85rem;color:var(--text-md);display:block;margin-bottom:18px;">96 Av. Achille Peretti, 92200 Neuilly-sur-Seine</span>
+    <div style="width:40px;height:1px;background:var(--line);margin:0 auto 18px;"></div>
     <span style="font-size:.85rem;color:var(--text-md);display:block;margin-bottom:28px;">Suivi d'un vin d'honneur à 15h30</span>
     <div style="width:40px;height:1px;background:var(--line);margin:0 auto 22px;"></div>
-    <span style="font-family:'Playfair Display',serif;font-size:clamp(1rem,1.8vw,1.3rem);font-weight:300;color:var(--brown);letter-spacing:.08em;display:block;">10 septembre 2026</span>
+    <span style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.4vw,2rem);font-weight:300;color:var(--brown);letter-spacing:.08em;display:block;">10 septembre 2026</span>
     </div><!-- /arch-inner -->
   </div>
 </section>
@@ -395,9 +396,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
   <div class="arch c rv" style="transition-delay:.12s">
     <div class="arch-inner">
     <p class="inv-fam">
-      <strong>Sabrina <span style="font-family:'Cormorant Garamond',serif;font-size:1.3em;">&</span> Éric CHAIGNEAU</strong><br>
-      <em style="font-style:italic;color:var(--text-md)">et</em><br>
-      <strong>Catherine <span style="font-family:'Cormorant Garamond',serif;font-size:1.3em;">&</span> Didier GUESDON</strong>
+      <strong>Sabrina et Éric CHAIGNEAU</strong><br>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.4em;color:var(--brown-lt);">&</span><br>
+      <strong>Catherine et Didier GUESDON</strong>
     </p>
     <p class="inv-joy" style="color:var(--brown-lt);">ont l'immense joie de vous faire part du mariage de leurs enfants</p>
     <div class="inv-cp">
@@ -410,7 +411,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
     <span class="inv-cd">Jeudi 8 octobre 2026</span>
     <span class="inv-hb2">27 Tichri 5787</span>
     <p class="inv-det" style="margin-bottom:4px;font-style:normal;">16H30</p>
-    <p class="inv-det" style="font-size:1rem;font-style:normal;">Château de Pinarello · Zonza — Corse</p>
+    <p class="inv-det" style="font-size:1rem;font-style:normal;">Château de Pinarello<br>Zonza — Corse</p>
     <p class="inv-mem">Une pensée pour nos grands-parents disparus<br>Mamie Georgette, Mardoché Partouche, Papi Jean et Papi Robert</p>
     </div><!-- /arch-inner -->
   </div>
@@ -460,17 +461,64 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
   </div>
   <div class="arch rv" style="transition-delay:.12s">
     <div class="arch-inner" style="text-align:center;">
-    <h2 class="sec-t" style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:8px;color:var(--brown-lt);"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.4-.1.9.3 1.1l6.2 3.6L7 14.8l-2.3-.5c-.4-.1-.8.1-1 .4l-.1.3c-.1.3 0 .7.3.9l2.8 1.9 1.9 2.8c.2.3.6.4.9.3l.3-.1c.3-.2.5-.6.4-1L9.7 17l2.9-2.9 3.6 6.2c.2.4.7.5 1.1.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg> Aéroport de Figari Sud-Corse</h2>
-    <p style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--brown);margin-bottom:6px;font-weight:400;text-align:center;">Tarif de Groupe — Mariage Morgane <span style="font-family:'Cormorant Garamond',serif;font-size:1.3em;">&</span> Antoine</p>
-    <p style="font-size:.9rem;color:var(--text-md);margin-bottom:18px;text-align:center;">Contacter l'agence au <a href="tel:0679779550" style="color:var(--brown);font-weight:600;text-decoration:none;">06 79 77 95 50</a> ou <a href="mailto:albavoyages@orange.fr" style="color:var(--brown);font-weight:600;text-decoration:none;">albavoyages@orange.fr</a></p>
-    <div class="tbox" style="text-align:center;border-left:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line);"><strong>PARIS → FIGARI</strong><p>Mercredi 07 octobre 2026 · 14H30 → 16H10</p></div>
-    <div class="tbox" style="text-align:center;border-left:none;border-top:none;border-bottom:1px solid var(--line);"><strong>FIGARI → PARIS</strong><p>Dimanche 11 octobre 2026 · 18H05 → 19H50</p></div>
-    <div class="t-div" style="margin:22px auto;"></div>
-    <h2 class="sec-t" style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:8px;color:var(--brown-lt);"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Voiture de location</h2>
-    <p style="font-size:1rem;color:var(--text-md);line-height:1.9;margin-bottom:22px;text-align:center;">Tarif préférentiel avec l'agence ou sur Air Corsica, partenaires <strong style="color:var(--brown-dk)">HERTZ</strong>.</p>
-    <h2 class="sec-t" style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:8px;color:var(--brown-lt);"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Navettes pour vous accompagner à la cérémonie</h2>
-    <div class="tbox" style="text-align:center;border-left:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line);"><strong>Hôtel Le Mariosa → Château de Pinarello</strong><p>Départ à <strong>15h45</strong></p></div>
-    <div class="tbox" style="text-align:center;border-left:none;border-top:none;border-bottom:1px solid var(--line);"><strong>Château de Pinarello → Hôtel Le Mariosa</strong><p>Toutes les <strong>30 min</strong> à partir de minuit</p></div>
+
+    <!-- ✈ VOLS -->
+    <div style="margin-bottom:40px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="var(--brown)" stroke="none" style="margin-bottom:18px;opacity:.7;"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.4-.1.9.3 1.1l6.2 3.6L7 14.8l-2.3-.5c-.4-.1-.8.1-1 .4l-.1.3c-.1.3 0 .7.3.9l2.8 1.9 1.9 2.8c.2.3.6.4.9.3l.3-.1c.3-.2.5-.6.4-1L9.7 17l2.9-2.9 3.6 6.2c.2.4.7.5 1.1.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg>
+      <div style="display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:8px;">
+        <div style="flex:1;max-width:120px;height:1px;background:var(--line);"></div>
+        <span style="font-size:.6rem;color:var(--brown-lt);">◆</span>
+        <div style="flex:1;max-width:120px;height:1px;background:var(--line);"></div>
+      </div>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;color:var(--brown);display:block;margin-bottom:4px;">Corse</span>
+      <span style="font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:var(--brown-lt);display:block;margin-bottom:28px;">Aéroport de Figari Sud Corse</span>
+
+      <div style="background:var(--brown-dk);padding:12px 28px;margin-bottom:28px;">
+        <span style="font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--white);">✦ &nbsp; Tarif de Groupe — Mariage Morgane & Antoine &nbsp; ✦</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+        <div style="border:1px solid var(--line);padding:20px 18px;text-align:left;">
+          <span style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brown-lt);display:block;margin-bottom:8px;">Vol Aller</span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:var(--brown-dk);display:block;margin-bottom:6px;">Paris → Figari</span>
+          <span style="font-size:.85rem;color:var(--text-md);display:block;margin-bottom:4px;">Mercredi 07 octobre 2026</span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:300;color:var(--brown-lt);">14H30 — 16H10</span>
+        </div>
+        <div style="border:1px solid var(--line);padding:20px 18px;text-align:left;">
+          <span style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brown-lt);display:block;margin-bottom:8px;">Vol Retour</span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:var(--brown-dk);display:block;margin-bottom:6px;">Figari → Paris</span>
+          <span style="font-size:.85rem;color:var(--text-md);display:block;margin-bottom:4px;">Dimanche 11 octobre 2026</span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:300;color:var(--brown-lt);">18H05 — 19H50</span>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:14px;">
+        <div style="flex:1;max-width:120px;height:1px;background:var(--line);"></div>
+        <span style="font-size:.6rem;color:var(--brown-lt);">◆</span>
+        <div style="flex:1;max-width:120px;height:1px;background:var(--line);"></div>
+      </div>
+      <p style="font-family:'Playfair Display',serif;font-size:.95rem;font-style:italic;color:var(--brown-lt);margin-bottom:6px;">Veuillez contacter directement l'agence</p>
+      <p style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;color:var(--brown);margin-bottom:6px;"><a href="tel:0679779550" style="color:var(--brown);text-decoration:none;">06 79 77 95 50</a></p>
+      <span style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brown-lt);display:block;margin-bottom:4px;">ou par email</span>
+      <p style="font-size:.95rem;"><a href="mailto:albavoyages@orange.fr" style="color:var(--brown-dk);text-decoration:none;font-weight:400;">albavoyages@orange.fr</a></p>
+
+      <div style="width:100%;height:1px;background:var(--line);margin:32px 0;"></div>
+      <span style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brown-lt);display:block;">Réservations & Informations</span>
+    </div>
+
+    <!-- 🚗 VOITURE -->
+    <div style="border-top:1px solid var(--line);padding-top:32px;margin-bottom:32px;">
+      <h2 class="sec-t" style="text-align:center;">Voiture de location</h2>
+      <p style="font-size:1rem;color:var(--text-md);line-height:1.9;text-align:center;">Tarif préférentiel avec l'agence ou sur Air Corsica, partenaires <strong style="color:var(--brown-dk)">HERTZ</strong>.</p>
+    </div>
+
+    <!-- 🚌 NAVETTES -->
+    <div style="border-top:1px solid var(--line);padding-top:32px;">
+      <h2 class="sec-t" style="text-align:center;">Navettes pour vous accompagner à la cérémonie</h2>
+      <div class="tbox" style="text-align:center;border-left:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line);"><strong>Hôtel Le Mariosa → Château de Pinarello</strong><p>Départ à <strong>15h45</strong></p></div>
+      <div class="tbox" style="text-align:center;border-left:none;border-top:none;border-bottom:1px solid var(--line);"><strong>Château de Pinarello → Hôtel Le Mariosa</strong><p>Toutes les <strong>30 min</strong> à partir de minuit</p></div>
+    </div>
+
     </div>
   </div>
 </section>
@@ -486,26 +534,52 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
   </div>
   <div class="arch rv" style="transition-delay:.12s">
     <div class="arch-inner" style="text-align:center;">
+
     <span class="h-stars">★★★★</span>
-    <span class="h-name">LE MARIOSA</span>
+    <span class="h-name" style="margin-bottom:10px;">LE MARIOSA</span>
     <span class="h-badge">Hôtel des mariés & du Shabbat Hatan</span>
-    <p class="h-addr" style="text-align:center;">Route de Palombaggia, par Piccovaggia<br>20137 Porto-Vecchio<br><a href="tel:0495701777" style="font-weight:700;">04 95 70 17 77</a></p>
-    <p style="font-size:1rem;color:var(--text-md);line-height:2;text-align:center;margin-bottom:12px;">
-      Réservation par téléphone en mentionnant le mariage de Morgane <span style="font-family:'Cormorant Garamond',serif;font-size:1.3em;">&</span> Antoine
+
+    <div style="display:flex;align-items:center;gap:12px;justify-content:center;margin:24px 0 18px;">
+      <div style="flex:1;max-width:80px;height:1px;background:var(--line);"></div>
+      <span style="font-size:.6rem;color:var(--brown-lt);">◆</span>
+      <div style="flex:1;max-width:80px;height:1px;background:var(--line);"></div>
+    </div>
+
+    <p style="font-size:.9rem;color:var(--text-md);line-height:1.8;text-align:center;margin-bottom:4px;">Route de Palombaggia, par Piccovaggia</p>
+    <p style="font-size:.9rem;color:var(--text-md);text-align:center;margin-bottom:12px;">20137 Porto-Vecchio</p>
+    <p style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,1.8rem);font-weight:300;color:var(--brown);margin-bottom:20px;"><a href="tel:0495701777" style="color:var(--brown);text-decoration:none;">04 95 70 17 77</a></p>
+
+    <div style="width:100%;height:1px;background:var(--line);margin:0 auto 22px;"></div>
+
+    <p style="font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:var(--text-md);line-height:1.8;text-align:center;margin-bottom:18px;">
+      Réservation par téléphone en mentionnant<br>le mariage de Morgane <span style="font-family:'Cormorant Garamond',serif;font-size:1.3em;">&</span> Antoine
     </p>
-    <p style="font-size:1rem;color:var(--text-md);line-height:2;text-align:center;margin-bottom:6px;">
-      –20% sur les chambres (hors petit-déjeuner)
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px;">
+      <div style="border:1px solid var(--line);padding:16px 14px;">
+        <span style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:300;color:var(--brown);display:block;margin-bottom:4px;">–20%</span>
+        <span style="font-size:.75rem;color:var(--text-md);">sur les chambres<br>(hors petit-déjeuner)</span>
+      </div>
+      <div style="border:1px solid var(--line);padding:16px 14px;">
+        <span style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:300;color:var(--brown);display:block;margin-bottom:4px;">4 nuits</span>
+        <span style="font-size:.75rem;color:var(--text-md);">Réservation<br>uniquement</span>
+      </div>
+    </div>
+
+    <div style="background:var(--brown-dk);padding:12px 24px;margin-bottom:22px;">
+      <span style="font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white);">Mercredi 7 oct. → Dimanche 11 oct. 2026</span>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:14px;">
+      <div style="flex:1;max-width:80px;height:1px;background:var(--line);"></div>
+      <span style="font-size:.6rem;color:var(--brown-lt);">◆</span>
+      <div style="flex:1;max-width:80px;height:1px;background:var(--line);"></div>
+    </div>
+
+    <p style="font-size:.88rem;color:var(--text-md);line-height:1.8;text-align:center;">
+      Petit-déjeuner : <strong style="color:var(--brown-dk);">15€ TTC</strong><br>Ne peut pas être ajouté sur place, merci de le préciser impérativement au moment de la réservation.
     </p>
-    <p style="font-size:1rem;color:var(--text-md);line-height:2;text-align:center;margin-bottom:12px;">
-      Réservation pour 4 nuits uniquement
-    </p>
-    <p style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--brown);font-weight:400;text-align:center;margin-bottom:18px;letter-spacing:.04em;">
-      Mercredi 7 octobre → Dimanche 11 octobre 2026
-    </p>
-    <div style="width:40px;height:1px;background:var(--line);margin:0 auto 18px;"></div>
-    <p style="font-size:1rem;color:var(--text-md);line-height:2;text-align:center;">
-      Petit-déjeuner : 15€ TTC — ne peut pas être ajouté sur place, merci de le préciser impérativement au moment de la réservation
-    </p>
+
     </div><!-- /arch-inner -->
   </div>
 </section>
@@ -521,7 +595,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
   </div>
   <div class="arch rv" style="transition-delay:.12s">
     <div class="arch-inner">
-    <p class="p-intro" style="font-family:'Montserrat',sans-serif;font-style:normal;text-align:center;">À proximité du Mariosa, dans un périmètre de 15 min à pieds.<br>Appelez en précisant le mariage de <strong style="color:var(--brown-dk)">Morgane <span style="font-family:'Cormorant Garamond',serif;font-size:1.2em;">&</span> Antoine</strong>.</p>
+    <p style="font-size:.85rem;color:var(--brown-lt);text-align:center;margin-bottom:8px;line-height:1.8;">À proximité du Mariosa, dans un périmètre de 15 min à pieds.</p>
+    <p style="font-family:'Montserrat',sans-serif;font-size:1.05rem;text-align:center;margin-bottom:26px;color:var(--text-md);">Appelez en précisant le mariage de<br><strong style="color:var(--brown-dk);">Morgane <span style="font-family:'Cormorant Garamond',serif;font-size:1.2em;">&</span> Antoine</strong></p>
     <div class="hl"><div><div class="hl-st">★★★★★</div><span class="hl-nm">Hotel Casadelmar</span><div class="hl-ad">Route de Palombaggia, 20137 Porto-Vecchio</div><div class="hl-ph"><a href="tel:0495723434" style="color:var(--brown-md);text-decoration:none">04 95 72 34 34</a></div></div><span class="hl-pk">–10%</span></div>
     <div class="hl"><div><div class="hl-st">★★★★</div><span class="hl-nm">Hotel Riva Beach</span><div class="hl-ad">Route de Piccovaggia, 20137 Porto-Vecchio</div><div class="hl-ph"><a href="tel:0495249613" style="color:var(--brown-md);text-decoration:none">04 95 24 96 13</a></div></div></div>
     <div class="hl"><div><div class="hl-st">★★★★</div><span class="hl-nm">Hotel Le Belvédère</span><div class="hl-ad">Route de Palombaggia, 20137 Porto-Vecchio</div><div class="hl-ph"><a href="tel:0495705413" style="color:var(--brown-md);text-decoration:none">04 95 70 54 13</a></div></div></div>
@@ -543,7 +618,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
   <div class="arch rv" style="transition-delay:.12s">
     <div class="arch-inner">
     <div id="rsvpForm">
-      <div class="rsvp-dl" style="text-align:center;">Merci de confirmer votre présence avant le<br><strong style="display:block;text-align:center;margin:6px 0;">26 mai 2026</strong><br>Enregistrez chaque personne invitée, enfants compris.<br><br>Pour tout +1 supplémentaire non prévu, merci de nous contacter au préalable afin que nous puissions en discuter ensemble.</div>
+      <div class="rsvp-dl" style="text-align:center;">Merci de confirmer votre présence avant le<br><strong style="display:block;text-align:center;margin:6px 0;">26 mai 2026</strong><br>Enregistrez chaque personne invitée, enfants compris.<br>Pour tout +1 supplémentaire non prévu, merci de nous contacter au préalable afin que nous puissions en discuter ensemble.</div>
       <div class="f-row" style="margin-bottom:0;">
         <div style="margin-bottom:15px;"><label class="f-lbl">Nom</label><input type="text" class="f-inp" id="fN" placeholder="Votre nom" style="margin-bottom:0;"></div>
         <div style="margin-bottom:15px;"><label class="f-lbl">Prénom</label><input type="text" class="f-inp" id="fP" placeholder="Votre prénom" style="margin-bottom:0;"></div>
