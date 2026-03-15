@@ -39,34 +39,34 @@
 **Cellule A1** : `TABLEAU DE BORD RSVP` (en gras, taille 18)
 
 **Cellule A3** : `Total soumissions`
-**Cellule B3** : `=NBVAL(RÉPONSES!B2:B)`
+**Cellule B3** : `=NBVAL(RÉPONSES!B3:B)`
 
 **Cellule A4** : `Total "Oui" Mairie`
-**Cellule B4** : `=NB.SI(RÉPONSES!E2:E;"Oui")`
+**Cellule B4** : `=NB.SI(RÉPONSES!E3:E;"Oui")`
 
 **Cellule A5** : `Total "Non" Mairie`
-**Cellule B5** : `=NB.SI(RÉPONSES!E2:E;"Non")`
+**Cellule B5** : `=NB.SI(RÉPONSES!E3:E;"Non")`
 
 **Cellule A6** : `Total "Oui" Houppa & Soirée`
-**Cellule B6** : `=NB.SI(RÉPONSES!G2:G;"Oui")`
+**Cellule B6** : `=NB.SI(RÉPONSES!G3:G;"Oui")`
 
 **Cellule A7** : `Total "Non" Houppa & Soirée`
-**Cellule B7** : `=NB.SI(RÉPONSES!G2:G;"Non")`
+**Cellule B7** : `=NB.SI(RÉPONSES!G3:G;"Non")`
 
 **Cellule A8** : `Total "Oui" After-Mairie`
-**Cellule B8** : `=NB.SI(RÉPONSES!F2:F;"Oui")`
+**Cellule B8** : `=NB.SI(RÉPONSES!F3:F;"Oui")`
 
 **Cellule A9** : `Total "Oui" Shabbat Vendredi`
-**Cellule B9** : `=NB.SI(RÉPONSES!H2:H;"Oui")`
+**Cellule B9** : `=NB.SI(RÉPONSES!H3:H;"Oui")`
 
 **Cellule A10** : `Total "Oui" Shabbat Samedi`
-**Cellule B10** : `=NB.SI(RÉPONSES!I2:I;"Oui")`
+**Cellule B10** : `=NB.SI(RÉPONSES!I3:I;"Oui")`
 
 **Cellule A11** : `Total "Oui" Car (navette)`
-**Cellule B11** : `=NB.SI(RÉPONSES!J2:J;"Oui")`
+**Cellule B11** : `=NB.SI(RÉPONSES!J3:J;"Oui")`
 
 **Cellule A13** : `Personnes avec régime spécial`
-**Cellule B13** : `=NB.SI.ENS(RÉPONSES!K2:K;"<>")`
+**Cellule B13** : `=NB.SI.ENS(RÉPONSES!K3:K;"<>")`
 
 **Cellule A15** : `DÉTAIL RÉGIMES SPÉCIAUX` (en gras)
 
@@ -74,9 +74,9 @@
 **Cellule B16** : `Prénom`
 **Cellule C16** : `Allergies / Régime`
 
-**Cellule A17** : `=IFERROR(FILTER(RÉPONSES!B2:B;RÉPONSES!K2:K<>"");"")`
-**Cellule B17** : `=IFERROR(FILTER(RÉPONSES!C2:C;RÉPONSES!K2:K<>"");"")`
-**Cellule C17** : `=IFERROR(FILTER(RÉPONSES!K2:K;RÉPONSES!K2:K<>"");"")`
+**Cellule A17** : `=IFERROR(FILTER(RÉPONSES!B3:B;RÉPONSES!K3:K<>"");"")`
+**Cellule B17** : `=IFERROR(FILTER(RÉPONSES!C3:C;RÉPONSES!K3:K<>"");"")`
+**Cellule C17** : `=IFERROR(FILTER(RÉPONSES!K3:K;RÉPONSES!K3:K<>"");"")`
 
 ### Partage
 
