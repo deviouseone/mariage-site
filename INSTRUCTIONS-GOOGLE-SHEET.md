@@ -22,11 +22,13 @@
 7. Va dans **Format > Mise en forme conditionnelle**
 8. Ajoute une **première règle** :
    - Type : **La formule personnalisée est**
-   - Formule : `=ET($E2="Oui",$G2="Oui")`
+   - Formule (Sheet en français) : `=ET($E2="Oui";$G2="Oui")`
+   - Formule (Sheet en anglais) : `=AND($E2="Oui",$G2="Oui")`
    - Couleur de fond : **Vert clair** (#d9ead3)
 9. Ajoute une **deuxième règle** :
    - Type : **La formule personnalisée est**
-   - Formule : `=ET($E2="Non",$G2="Non")`
+   - Formule (Sheet en français) : `=ET($E2="Non";$G2="Non")`
+   - Formule (Sheet en anglais) : `=AND($E2="Non",$G2="Non")`
    - Couleur de fond : **Rouge clair** (#f4cccc)
 
 ### Onglet "DASHBOARD" (vue d'ensemble)
