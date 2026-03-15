@@ -639,18 +639,15 @@ async function submitRSVP(){
     document.getElementById('rsvpForm').style.display='none';
     document.getElementById('rsvpSending').style.display='block';
     try{
-      const resp=await fetch(APPS_SCRIPT_URL,{
+      await fetch(APPS_SCRIPT_URL,{
         method:'POST',
-        headers:{'Content-Type':'text/plain;charset=utf-8'},
+        mode:'no-cors',
         body:JSON.stringify(data)
       });
-      const result=await resp.json();
-      if(result.status==='success'){
-        document.getElementById('rsvpSending').style.display='none';
-        document.getElementById('rsvpOk').style.display='block';
-      } else {
-        throw new Error(result.message||'Erreur serveur');
-      }
+      // Google Apps Script redirige, donc on ne peut pas lire la réponse (opaque).
+      // Si le fetch ne lève pas d'erreur réseau, on considère que c'est OK.
+      document.getElementById('rsvpSending').style.display='none';
+      document.getElementById('rsvpOk').style.display='block';
     }catch(e){
       document.getElementById('rsvpSending').style.display='none';
       document.getElementById('rsvpForm').style.display='block';
