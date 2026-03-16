@@ -203,6 +203,36 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 .rsvp-ok-s{font-size:.9rem;color:var(--text-md);}
 .rsvp-err{display:none;padding:14px 18px;background:#fff0f0;border-left:3px solid #c0392b;font-size:.85rem;color:#c0392b;margin-top:12px;}
 
+/* ── STEPPER RSVP ── */
+.stp-dots{display:flex;gap:8px;justify-content:center;margin-bottom:18px;}
+.stp-dot{width:8px;height:8px;border-radius:50%;background:var(--line);transition:all .3s;}
+.stp-dot.active{background:var(--brown);transform:scale(1.25);}
+.stp-dot.done{background:var(--brown-lt);}
+.stp-viewport{overflow:hidden;position:relative;}
+.stp-track{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1);}
+.stp-step{min-width:100%;flex-shrink:0;padding:0 2px;}
+.stp-step-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:300;color:var(--brown);margin-bottom:16px;text-align:center;}
+.stp-btns{display:flex;gap:10px;margin-top:18px;}
+.stp-btns .sbm{flex:1;}
+.sbm.sbm-outline{background:none;border:1px solid var(--brown-dk);color:var(--brown-dk);}
+.sbm.sbm-outline:hover{background:var(--brown-dk);color:var(--white);}
+.stp-cb-row{display:flex;align-items:center;gap:10px;margin-top:16px;margin-bottom:6px;cursor:pointer;}
+.stp-cb-row input[type=checkbox]{width:16px;height:16px;accent-color:var(--brown);}
+.stp-cb-row label{font-size:.88rem;color:var(--text-md);cursor:pointer;}
+.stp-sel-row{margin-top:8px;margin-bottom:4px;display:none;}
+.stp-sel-row.show{display:block;}
+.stp-sel-row select{width:100%;padding:10px 14px;border:1px solid var(--line);background:#FFFEFC;font-family:'Montserrat',sans-serif;font-size:.95rem;color:var(--text);outline:none;transition:border-color .2s;}
+.stp-sel-row select:focus{border-color:var(--brown);}
+.stp-recap{text-align:left;}
+.stp-recap-item{padding:12px 0;border-bottom:1px solid rgba(196,184,171,.25);}
+.stp-recap-item:first-child{border-top:1px solid rgba(196,184,171,.25);}
+.stp-recap-nm{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--brown-dk);margin-bottom:2px;}
+.stp-recap-det{font-size:.82rem;color:var(--text-md);line-height:1.7;}
+.stp-recap-tag{display:inline-block;padding:2px 10px;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;margin-right:6px;}
+.stp-recap-tag.oui{background:var(--brown-dk);color:var(--white);}
+.stp-recap-tag.non{background:var(--line);color:var(--text);}
+.f-err{font-size:.75rem;color:#c0392b;margin-top:-10px;margin-bottom:8px;display:none;}
+
 /* ── FIN ── */
 #fin{background:var(--brown-dk);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 40px;}
 #fin .logo-f{width:85px;opacity:.3;filter:brightness(5) saturate(0);margin-bottom:36px;}
@@ -619,26 +649,56 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
     <div class="arch-inner">
     <div id="rsvpForm">
       <div class="rsvp-dl" style="text-align:center;">Merci de confirmer votre présence avant le<br><strong style="display:block;text-align:center;margin:6px 0;">26 mai 2026</strong><br>Enregistrez chaque personne invitée, enfants compris.<br>Pour tout +1 supplémentaire non prévu, merci de nous contacter au préalable afin que nous puissions en discuter ensemble.</div>
-      <div class="f-row" style="margin-bottom:0;">
-        <div style="margin-bottom:15px;"><label class="f-lbl">Nom</label><input type="text" class="f-inp" id="fN" placeholder="Votre nom" style="margin-bottom:0;"></div>
-        <div style="margin-bottom:15px;"><label class="f-lbl">Prénom</label><input type="text" class="f-inp" id="fP" placeholder="Votre prénom" style="margin-bottom:0;"></div>
-      </div>
-      <label class="f-lbl">Email</label>
-      <input type="email" class="f-inp" id="fE" placeholder="votre@email.com">
 
-      <span class="ev-lbl">Présence aux événements</span>
-      <div class="ev-row"><span class="ev-nm">MAIRIE</span><div class="tg-g"><button class="tg" onclick="tg(this,'oui')">OUI</button><button class="tg" onclick="tg(this,'non')">NON</button></div></div>
-      <div class="ev-row"><span class="ev-nm">AFTER-MAIRIE</span><div class="tg-g"><button class="tg" onclick="tg(this,'oui')">OUI</button><button class="tg" onclick="tg(this,'non')">NON</button></div></div>
-      <div class="ev-row"><span class="ev-nm">HOUPPA & SOIRÉE</span><div class="tg-g"><button class="tg" onclick="tg(this,'oui')">OUI</button><button class="tg" onclick="tg(this,'non')">NON</button></div></div>
-      <div class="ev-row"><div><span class="ev-nm">SHABBAT HATAN</span><span class="ev-sub">Vendredi soir</span></div><div class="tg-g"><button class="tg" onclick="tg(this,'oui')">OUI</button><button class="tg" onclick="tg(this,'non')">NON</button></div></div>
-      <div class="ev-row"><div><span class="ev-nm">SHABBAT HATAN</span><span class="ev-sub">Samedi midi</span></div><div class="tg-g"><button class="tg" onclick="tg(this,'oui')">OUI</button><button class="tg" onclick="tg(this,'non')">NON</button></div></div>
-      <div class="ev-row"><div><span class="ev-nm">PRÉSENCE DANS LE CAR</span><span class="ev-sub">Départ Mariosa 15h45</span></div><div class="tg-g"><button class="tg" onclick="tg(this,'oui')">OUI</button><button class="tg" onclick="tg(this,'non')">NON</button></div></div>
+      <!-- DOTS -->
+      <div class="stp-dots" id="stpDots"><span class="stp-dot active"></span></div>
 
-      <label class="f-lbl" style="margin-top:16px">Allergies alimentaires</label>
-      <textarea class="f-ta" id="fA" placeholder="Précisez vos allergies éventuelles…"></textarea>
+      <!-- VIEWPORT -->
+      <div class="stp-viewport">
+        <div class="stp-track" id="stpTrack">
 
-      <button class="sbm" id="sbmBtn" onclick="submitRSVP()">ENVOYER MA RÉPONSE</button>
-      <div class="rsvp-err" id="rsvpErr"></div>
+          <!-- ═══ ÉTAPE 1 : INVITÉ PRINCIPAL ═══ -->
+          <div class="stp-step" id="step0">
+            <div class="f-row" style="margin-bottom:0;">
+              <div style="margin-bottom:15px;"><label class="f-lbl">Nom</label><input type="text" class="f-inp" id="fN" placeholder="Votre nom" style="margin-bottom:0;"><div class="f-err" id="errN"></div></div>
+              <div style="margin-bottom:15px;"><label class="f-lbl">Prénom</label><input type="text" class="f-inp" id="fP" placeholder="Votre prénom" style="margin-bottom:0;"><div class="f-err" id="errP"></div></div>
+            </div>
+            <label class="f-lbl">Email</label>
+            <input type="email" class="f-inp" id="fE" placeholder="votre@email.com">
+            <div class="f-err" id="errE"></div>
+
+            <span class="ev-lbl">Présence aux événements</span>
+            <div class="ev-row"><span class="ev-nm">MAIRIE</span><div class="tg-g"><button type="button" class="tg" onclick="tg(this,'oui')">OUI</button><button type="button" class="tg" onclick="tg(this,'non')">NON</button></div></div>
+            <div class="ev-row"><span class="ev-nm">AFTER-MAIRIE</span><div class="tg-g"><button type="button" class="tg" onclick="tg(this,'oui')">OUI</button><button type="button" class="tg" onclick="tg(this,'non')">NON</button></div></div>
+            <div class="ev-row"><span class="ev-nm">HOUPPA & SOIRÉE</span><div class="tg-g"><button type="button" class="tg" onclick="tg(this,'oui')">OUI</button><button type="button" class="tg" onclick="tg(this,'non')">NON</button></div></div>
+            <div class="ev-row"><div><span class="ev-nm">SHABBAT HATAN</span><span class="ev-sub">Vendredi soir</span></div><div class="tg-g"><button type="button" class="tg" onclick="tg(this,'oui')">OUI</button><button type="button" class="tg" onclick="tg(this,'non')">NON</button></div></div>
+            <div class="ev-row"><div><span class="ev-nm">SHABBAT HATAN</span><span class="ev-sub">Samedi midi</span></div><div class="tg-g"><button type="button" class="tg" onclick="tg(this,'oui')">OUI</button><button type="button" class="tg" onclick="tg(this,'non')">NON</button></div></div>
+            <div class="ev-row"><div><span class="ev-nm">PRÉSENCE DANS LE CAR</span><span class="ev-sub">Départ Mariosa 15h45</span></div><div class="tg-g"><button type="button" class="tg" onclick="tg(this,'oui')">OUI</button><button type="button" class="tg" onclick="tg(this,'non')">NON</button></div></div>
+
+            <label class="f-lbl" style="margin-top:16px">Allergies alimentaires</label>
+            <textarea class="f-ta" id="fA" placeholder="Précisez vos allergies éventuelles…"></textarea>
+
+            <div class="stp-cb-row">
+              <input type="checkbox" id="cbAcc" onchange="stpToggleAcc()">
+              <label for="cbAcc">J'inscris également des accompagnants</label>
+            </div>
+            <div class="stp-sel-row" id="selAccRow">
+              <label class="f-lbl">Nombre d'accompagnants</label>
+              <select id="selAcc" onchange="stpBuildSteps()">
+                <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+              </select>
+            </div>
+
+            <button type="button" class="sbm" id="step0Btn" onclick="stpNext(0)">ENVOYER MA RÉPONSE</button>
+            <div class="rsvp-err" id="rsvpErr"></div>
+          </div>
+
+          <!-- ═══ ÉTAPES ACCOMPAGNANTS (générées par JS) ═══ -->
+
+          <!-- ═══ ÉTAPE RÉCAP (générée par JS) ═══ -->
+
+        </div><!-- /stp-track -->
+      </div><!-- /stp-viewport -->
     </div>
     <div class="rsvp-sending" id="rsvpSending">
       <p style="font-size:1rem;color:var(--text-md)">Envoi en cours…</p>
@@ -684,40 +744,232 @@ function getTogVal(evRow){
   return sel ? sel.classList.contains('oui') ? 'Oui' : 'Non' : '—';
 }
 
-// ─── SUBMIT RSVP ───
-async function submitRSVP(){
-  const btn=document.getElementById('sbmBtn');
-  // Anti-double clic
-  if(btn.disabled) return;
+// ─── STEPPER RSVP ───
+var stpCur=0, stpTotal=1, stpAccCount=0;
+var stpGuests=[]; // tableau de tous les invités
 
-  const nom=document.getElementById('fN').value.trim();
-  const prenom=document.getElementById('fP').value.trim();
-  const email=document.getElementById('fE').value.trim();
+function stpToggleAcc(){
+  var cb=document.getElementById('cbAcc');
+  var sel=document.getElementById('selAccRow');
+  var btn=document.getElementById('step0Btn');
+  if(cb.checked){
+    sel.classList.add('show');
+    btn.textContent='SUIVANT →';
+    stpBuildSteps();
+  } else {
+    sel.classList.remove('show');
+    btn.textContent='ENVOYER MA RÉPONSE';
+    stpAccCount=0;
+    stpRemoveDynSteps();
+    stpTotal=1;
+    stpUpdateDots();
+  }
+}
 
-  if(!nom||!prenom){
-    showErr('Merci de renseigner votre nom et prénom.');
+function stpBuildSteps(){
+  stpRemoveDynSteps();
+  stpAccCount=parseInt(document.getElementById('selAcc').value);
+  stpTotal=1+stpAccCount+1; // step0 + accompagnants + recap
+  stpUpdateDots();
+  var track=document.getElementById('stpTrack');
+  // Build accompagnant steps
+  for(var i=1;i<=stpAccCount;i++){
+    var div=document.createElement('div');
+    div.className='stp-step stp-dyn';
+    div.id='step'+i;
+    div.innerHTML=
+      '<p class="stp-step-title">Accompagnant '+i+' sur '+stpAccCount+'</p>'+
+      '<div class="f-row" style="margin-bottom:0;">'+
+        '<div style="margin-bottom:15px;"><label class="f-lbl">Nom</label><input type="text" class="f-inp" id="aN'+i+'" placeholder="Nom" style="margin-bottom:0;"><div class="f-err" id="errAN'+i+'"></div></div>'+
+        '<div style="margin-bottom:15px;"><label class="f-lbl">Prénom</label><input type="text" class="f-inp" id="aP'+i+'" placeholder="Prénom" style="margin-bottom:0;"><div class="f-err" id="errAP'+i+'"></div></div>'+
+      '</div>'+
+      '<span class="ev-lbl">Présence</span>'+
+      '<div class="ev-row"><span class="ev-nm">PRÉSENCE CONFIRMÉE</span><div class="tg-g"><button type="button" class="tg" onclick="tg(this,\'oui\')">OUI</button><button type="button" class="tg" onclick="tg(this,\'non\')">NON</button></div></div>'+
+      '<div class="f-err" id="errATg'+i+'"></div>'+
+      '<label class="f-lbl" style="margin-top:16px">Régime alimentaire / Allergies</label>'+
+      '<textarea class="f-ta" id="aR'+i+'" placeholder="Optionnel…" style="min-height:50px;"></textarea>'+
+      '<div class="stp-btns">'+
+        '<button type="button" class="sbm sbm-outline" onclick="stpPrev()">← RETOUR</button>'+
+        '<button type="button" class="sbm" onclick="stpNext('+i+')">'+(i===stpAccCount?'VOIR LE RÉCAPITULATIF →':'SUIVANT →')+'</button>'+
+      '</div>';
+    track.appendChild(div);
+  }
+  // Build recap step
+  var recap=document.createElement('div');
+  recap.className='stp-step stp-dyn';
+  recap.id='stepRecap';
+  recap.innerHTML=
+    '<p class="stp-step-title">Récapitulatif</p>'+
+    '<div class="stp-recap" id="recapList"></div>'+
+    '<div class="stp-btns" style="margin-top:22px;">'+
+      '<button type="button" class="sbm sbm-outline" onclick="stpPrev()">← MODIFIER</button>'+
+      '<button type="button" class="sbm" id="recapSendBtn" onclick="stpSubmit()">CONFIRMER ET ENVOYER</button>'+
+    '</div>'+
+    '<div class="rsvp-err" id="rsvpErr2" style="display:none;"></div>';
+  track.appendChild(recap);
+}
+
+function stpRemoveDynSteps(){
+  document.querySelectorAll('.stp-dyn').forEach(function(el){el.remove();});
+}
+
+function stpUpdateDots(){
+  var container=document.getElementById('stpDots');
+  container.innerHTML='';
+  for(var i=0;i<stpTotal;i++){
+    var d=document.createElement('span');
+    d.className='stp-dot';
+    if(i<stpCur) d.classList.add('done');
+    if(i===stpCur) d.classList.add('active');
+    container.appendChild(d);
+  }
+}
+
+function stpGoTo(idx){
+  stpCur=idx;
+  document.getElementById('stpTrack').style.transform='translateX(-'+(idx*100)+'%)';
+  stpUpdateDots();
+}
+
+function stpPrev(){
+  if(stpCur>0) stpGoTo(stpCur-1);
+}
+
+function stpClearErr(){
+  document.querySelectorAll('.f-err').forEach(function(e){e.style.display='none';e.textContent='';});
+}
+
+function stpShowFieldErr(id,msg){
+  var el=document.getElementById(id);
+  if(el){el.textContent=msg;el.style.display='block';}
+}
+
+function stpNext(stepIdx){
+  stpClearErr();
+
+  // Step 0 : invité principal
+  if(stepIdx===0){
+    var nom=document.getElementById('fN').value.trim();
+    var prenom=document.getElementById('fP').value.trim();
+    var email=document.getElementById('fE').value.trim();
+    var ok=true;
+    if(!nom){stpShowFieldErr('errN','Champ obligatoire');ok=false;}
+    if(!prenom){stpShowFieldErr('errP','Champ obligatoire');ok=false;}
+    if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){stpShowFieldErr('errE','Email invalide');ok=false;}
+    if(!ok) return;
+
+    // Collecter données step0
+    var rows=document.querySelectorAll('#step0 .ev-row');
+    stpGuests[0]={
+      nom:nom, prenom:prenom,
+      mairie:getTogVal(rows[0]),
+      afterMairie:getTogVal(rows[1]),
+      houppa:getTogVal(rows[2]),
+      shabbatVen:getTogVal(rows[3]),
+      shabbatSam:getTogVal(rows[4]),
+      car:getTogVal(rows[5]),
+      allergies:document.getElementById('fA').value.trim(),
+      presence:'Oui'
+    };
+
+    if(!document.getElementById('cbAcc').checked){
+      // Pas d'accompagnants → envoi direct
+      stpSubmitDirect();
+      return;
+    }
+    stpGoTo(1);
     return;
   }
 
-  const rows=document.querySelectorAll('.ev-row');
-  const data={
-    nom:nom,
-    prenom:prenom,
-    email:email,
-    mairie:     getTogVal(rows[0]),
-    afterMairie:getTogVal(rows[1]),
-    houppa:     getTogVal(rows[2]),
-    shabbatVen: getTogVal(rows[3]),
-    shabbatSam: getTogVal(rows[4]),
-    car:        getTogVal(rows[5]),
-    allergies:  document.getElementById('fA').value.trim()
+  // Steps accompagnants (1..stpAccCount)
+  if(stepIdx>=1 && stepIdx<=stpAccCount){
+    var aN=document.getElementById('aN'+stepIdx).value.trim();
+    var aP=document.getElementById('aP'+stepIdx).value.trim();
+    var ok2=true;
+    if(!aN){stpShowFieldErr('errAN'+stepIdx,'Champ obligatoire');ok2=false;}
+    if(!aP){stpShowFieldErr('errAP'+stepIdx,'Champ obligatoire');ok2=false;}
+    // Vérifier présence sélectionnée
+    var accRow=document.querySelector('#step'+stepIdx+' .ev-row');
+    var accPres=getTogVal(accRow);
+    if(accPres==='—'){stpShowFieldErr('errATg'+stepIdx,'Merci de sélectionner Oui ou Non');ok2=false;}
+    if(!ok2) return;
+
+    stpGuests[stepIdx]={
+      nom:aN, prenom:aP,
+      presence:accPres,
+      regime:document.getElementById('aR'+stepIdx).value.trim()
+    };
+
+    // Dernier accompagnant → afficher recap
+    if(stepIdx===stpAccCount){
+      stpBuildRecap();
+      stpGoTo(stpAccCount+1);
+    } else {
+      stpGoTo(stepIdx+1);
+    }
+  }
+}
+
+function stpBuildRecap(){
+  var html='';
+  for(var i=0;i<stpGuests.length;i++){
+    if(!stpGuests[i]) continue;
+    var g=stpGuests[i];
+    var label=i===0?'Invité principal':'Accompagnant '+i;
+    var presTag=g.presence==='Oui'?'<span class="stp-recap-tag oui">Présent</span>':'<span class="stp-recap-tag non">Absent</span>';
+    var regime='';
+    if(i===0 && g.allergies) regime='<br>Allergies : '+g.allergies;
+    if(i>0 && g.regime) regime='<br>Régime : '+g.regime;
+    html+='<div class="stp-recap-item">'+
+      '<div class="stp-recap-nm">'+g.prenom+' '+g.nom+' <span style="font-size:.72rem;color:var(--brown-lt);font-family:Montserrat,sans-serif;">— '+label+'</span></div>'+
+      '<div class="stp-recap-det">'+presTag+regime+'</div></div>';
+  }
+  document.getElementById('recapList').innerHTML=html;
+}
+
+// Envoi sans accompagnants
+async function stpSubmitDirect(){
+  var g=stpGuests[0];
+  var data={
+    email:document.getElementById('fE').value.trim(),
+    guests:[{
+      nom:g.nom, prenom:g.prenom,
+      mairie:g.mairie, afterMairie:g.afterMairie,
+      houppa:g.houppa, shabbatVen:g.shabbatVen,
+      shabbatSam:g.shabbatSam, car:g.car,
+      allergies:g.allergies, presence:'Oui'
+    }]
   };
+  await stpSend(data);
+}
 
-  // Désactiver le bouton + état chargement
+// Envoi avec accompagnants (depuis le récap)
+async function stpSubmit(){
+  var btn=document.getElementById('recapSendBtn');
+  if(btn.disabled) return;
+  var g0=stpGuests[0];
+  var guests=[{
+    nom:g0.nom, prenom:g0.prenom,
+    mairie:g0.mairie, afterMairie:g0.afterMairie,
+    houppa:g0.houppa, shabbatVen:g0.shabbatVen,
+    shabbatSam:g0.shabbatSam, car:g0.car,
+    allergies:g0.allergies, presence:'Oui'
+  }];
+  for(var i=1;i<=stpAccCount;i++){
+    if(stpGuests[i]) guests.push(stpGuests[i]);
+  }
+  var data={
+    email:document.getElementById('fE').value.trim(),
+    guests:guests
+  };
+  await stpSend(data, btn);
+}
+
+async function stpSend(data, btn){
+  if(!btn) btn=document.getElementById('step0Btn');
   btn.disabled=true;
-  document.getElementById('rsvpErr').style.display='none';
+  btn.textContent='ENVOI EN COURS…';
 
-  // Si l'URL Apps Script est configurée
   if(APPS_SCRIPT_URL && APPS_SCRIPT_URL!=='APPS_SCRIPT_URL_HERE'){
     document.getElementById('rsvpForm').style.display='none';
     document.getElementById('rsvpSending').style.display='block';
@@ -727,26 +979,24 @@ async function submitRSVP(){
         mode:'no-cors',
         body:JSON.stringify(data)
       });
-      // Google Apps Script redirige, donc on ne peut pas lire la réponse (opaque).
-      // Si le fetch ne lève pas d'erreur réseau, on considère que c'est OK.
       document.getElementById('rsvpSending').style.display='none';
       document.getElementById('rsvpOk').style.display='block';
     }catch(e){
       document.getElementById('rsvpSending').style.display='none';
       document.getElementById('rsvpForm').style.display='block';
       btn.disabled=false;
+      btn.textContent='CONFIRMER ET ENVOYER';
       showErr('Une erreur est survenue. Merci de réessayer ou de nous contacter directement.');
     }
   } else {
-    // Mode démo sans Apps Script
     document.getElementById('rsvpForm').style.display='none';
     document.getElementById('rsvpOk').style.display='block';
   }
 }
+
 function showErr(msg){
-  const e=document.getElementById('rsvpErr');
-  e.textContent=msg; e.style.display='block';
-  document.getElementById('sbmBtn').disabled=false;
+  var e=document.getElementById('rsvpErr2')||document.getElementById('rsvpErr');
+  if(e){e.textContent=msg; e.style.display='block';}
 }
 
 // ─── SPLASH ───
