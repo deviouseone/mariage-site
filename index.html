@@ -231,7 +231,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 .stp-recap-tag{display:inline-block;padding:2px 10px;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;margin-right:6px;}
 .stp-recap-tag.oui{background:var(--brown-dk);color:var(--white);}
 .stp-recap-tag.non{background:var(--line);color:var(--text);}
-.f-err{font-size:.75rem;color:#c0392b;margin-top:-10px;margin-bottom:8px;display:none;}
+.f-err{font-size:.75rem;color:#c0392b;margin-top:4px;margin-bottom:0;display:none;}
 
 /* ── FIN ── */
 #fin{background:var(--brown-dk);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 40px;}
@@ -783,11 +783,15 @@ function stpBuildSteps(){
         '<div style="margin-bottom:15px;"><label class="f-lbl">Nom</label><input type="text" class="f-inp" id="aN'+i+'" placeholder="Nom" style="margin-bottom:0;"><div class="f-err" id="errAN'+i+'"></div></div>'+
         '<div style="margin-bottom:15px;"><label class="f-lbl">Prénom</label><input type="text" class="f-inp" id="aP'+i+'" placeholder="Prénom" style="margin-bottom:0;"><div class="f-err" id="errAP'+i+'"></div></div>'+
       '</div>'+
-      '<span class="ev-lbl">Présence</span>'+
-      '<div class="ev-row"><span class="ev-nm">PRÉSENCE CONFIRMÉE</span><div class="tg-g"><button type="button" class="tg" onclick="tg(this,\'oui\')">OUI</button><button type="button" class="tg" onclick="tg(this,\'non\')">NON</button></div></div>'+
-      '<div class="f-err" id="errATg'+i+'"></div>'+
-      '<label class="f-lbl" style="margin-top:16px">Régime alimentaire / Allergies</label>'+
-      '<textarea class="f-ta" id="aR'+i+'" placeholder="Optionnel…" style="min-height:50px;"></textarea>'+
+      '<span class="ev-lbl">Présence aux événements</span>'+
+      '<div class="ev-row"><span class="ev-nm">MAIRIE</span><div class="tg-g"><button type="button" class="tg" onclick="tg(this,\'oui\')">OUI</button><button type="button" class="tg" onclick="tg(this,\'non\')">NON</button></div></div>'+
+      '<div class="ev-row"><span class="ev-nm">AFTER-MAIRIE</span><div class="tg-g"><button type="button" class="tg" onclick="tg(this,\'oui\')">OUI</button><button type="button" class="tg" onclick="tg(this,\'non\')">NON</button></div></div>'+
+      '<div class="ev-row"><span class="ev-nm">HOUPPA & SOIRÉE</span><div class="tg-g"><button type="button" class="tg" onclick="tg(this,\'oui\')">OUI</button><button type="button" class="tg" onclick="tg(this,\'non\')">NON</button></div></div>'+
+      '<div class="ev-row"><div><span class="ev-nm">SHABBAT HATAN</span><span class="ev-sub">Vendredi soir</span></div><div class="tg-g"><button type="button" class="tg" onclick="tg(this,\'oui\')">OUI</button><button type="button" class="tg" onclick="tg(this,\'non\')">NON</button></div></div>'+
+      '<div class="ev-row"><div><span class="ev-nm">SHABBAT HATAN</span><span class="ev-sub">Samedi midi</span></div><div class="tg-g"><button type="button" class="tg" onclick="tg(this,\'oui\')">OUI</button><button type="button" class="tg" onclick="tg(this,\'non\')">NON</button></div></div>'+
+      '<div class="ev-row"><div><span class="ev-nm">PRÉSENCE DANS LE CAR</span><span class="ev-sub">Départ Mariosa 15h45</span></div><div class="tg-g"><button type="button" class="tg" onclick="tg(this,\'oui\')">OUI</button><button type="button" class="tg" onclick="tg(this,\'non\')">NON</button></div></div>'+
+      '<label class="f-lbl" style="margin-top:16px">Allergies alimentaires</label>'+
+      '<textarea class="f-ta" id="aR'+i+'" placeholder="Précisez les allergies éventuelles…" style="min-height:50px;"></textarea>'+
       '<div class="stp-btns">'+
         '<button type="button" class="sbm sbm-outline" onclick="stpPrev()">← RETOUR</button>'+
         '<button type="button" class="sbm" onclick="stpNext('+i+')">'+(i===stpAccCount?'VOIR LE RÉCAPITULATIF →':'SUIVANT →')+'</button>'+
@@ -888,16 +892,18 @@ function stpNext(stepIdx){
     var ok2=true;
     if(!aN){stpShowFieldErr('errAN'+stepIdx,'Champ obligatoire');ok2=false;}
     if(!aP){stpShowFieldErr('errAP'+stepIdx,'Champ obligatoire');ok2=false;}
-    // Vérifier présence sélectionnée
-    var accRow=document.querySelector('#step'+stepIdx+' .ev-row');
-    var accPres=getTogVal(accRow);
-    if(accPres==='—'){stpShowFieldErr('errATg'+stepIdx,'Merci de sélectionner Oui ou Non');ok2=false;}
     if(!ok2) return;
 
+    var accRows=document.querySelectorAll('#step'+stepIdx+' .ev-row');
     stpGuests[stepIdx]={
       nom:aN, prenom:aP,
-      presence:accPres,
-      regime:document.getElementById('aR'+stepIdx).value.trim()
+      mairie:getTogVal(accRows[0]),
+      afterMairie:getTogVal(accRows[1]),
+      houppa:getTogVal(accRows[2]),
+      shabbatVen:getTogVal(accRows[3]),
+      shabbatSam:getTogVal(accRows[4]),
+      car:getTogVal(accRows[5]),
+      allergies:document.getElementById('aR'+stepIdx).value.trim()
     };
 
     // Dernier accompagnant → afficher recap
@@ -911,18 +917,23 @@ function stpNext(stepIdx){
 }
 
 function stpBuildRecap(){
+  var evNames=['Mairie','After-Mairie','Houppa & Soirée','Shabbat Ven.','Shabbat Sam.','Car'];
+  var evKeys=['mairie','afterMairie','houppa','shabbatVen','shabbatSam','car'];
   var html='';
   for(var i=0;i<stpGuests.length;i++){
     if(!stpGuests[i]) continue;
     var g=stpGuests[i];
     var label=i===0?'Invité principal':'Accompagnant '+i;
-    var presTag=g.presence==='Oui'?'<span class="stp-recap-tag oui">Présent</span>':'<span class="stp-recap-tag non">Absent</span>';
-    var regime='';
-    if(i===0 && g.allergies) regime='<br>Allergies : '+g.allergies;
-    if(i>0 && g.regime) regime='<br>Régime : '+g.regime;
+    var evHtml='';
+    for(var j=0;j<evKeys.length;j++){
+      var v=g[evKeys[j]];
+      if(v && v!=='—') evHtml+='<span class="stp-recap-tag '+(v==='Oui'?'oui':'non')+'">'+evNames[j]+': '+v+'</span>';
+    }
+    var allergies='';
+    if(g.allergies) allergies='<br>Allergies : '+g.allergies;
     html+='<div class="stp-recap-item">'+
       '<div class="stp-recap-nm">'+g.prenom+' '+g.nom+' <span style="font-size:.72rem;color:var(--brown-lt);font-family:Montserrat,sans-serif;">— '+label+'</span></div>'+
-      '<div class="stp-recap-det">'+presTag+regime+'</div></div>';
+      '<div class="stp-recap-det">'+evHtml+allergies+'</div></div>';
   }
   document.getElementById('recapList').innerHTML=html;
 }
