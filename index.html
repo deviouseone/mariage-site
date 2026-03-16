@@ -941,42 +941,38 @@ function stpBuildRecap(){
 // Envoi sans accompagnants
 async function stpSubmitDirect(){
   var g=stpGuests[0];
-  var data={
-    email:document.getElementById('fE').value.trim(),
-    guests:[{
-      nom:g.nom, prenom:g.prenom,
-      mairie:g.mairie, afterMairie:g.afterMairie,
-      houppa:g.houppa, shabbatVen:g.shabbatVen,
-      shabbatSam:g.shabbatSam, car:g.car,
-      allergies:g.allergies, presence:'Oui'
-    }]
-  };
-  await stpSend(data);
+  var email=document.getElementById('fE').value.trim();
+  await stpSendAll([{
+    nom:g.nom, prenom:g.prenom, email:email,
+    mairie:g.mairie, afterMairie:g.afterMairie,
+    houppa:g.houppa, shabbatVen:g.shabbatVen,
+    shabbatSam:g.shabbatSam, car:g.car,
+    allergies:g.allergies
+  }]);
 }
 
 // Envoi avec accompagnants (depuis le récap)
 async function stpSubmit(){
   var btn=document.getElementById('recapSendBtn');
   if(btn.disabled) return;
-  var g0=stpGuests[0];
-  var guests=[{
-    nom:g0.nom, prenom:g0.prenom,
-    mairie:g0.mairie, afterMairie:g0.afterMairie,
-    houppa:g0.houppa, shabbatVen:g0.shabbatVen,
-    shabbatSam:g0.shabbatSam, car:g0.car,
-    allergies:g0.allergies, presence:'Oui'
-  }];
-  for(var i=1;i<=stpAccCount;i++){
-    if(stpGuests[i]) guests.push(stpGuests[i]);
+  var email=document.getElementById('fE').value.trim();
+  var allRows=[];
+  for(var i=0;i<=stpAccCount;i++){
+    if(!stpGuests[i]) continue;
+    var g=stpGuests[i];
+    allRows.push({
+      nom:g.nom, prenom:g.prenom, email:email,
+      mairie:g.mairie||'—', afterMairie:g.afterMairie||'—',
+      houppa:g.houppa||'—', shabbatVen:g.shabbatVen||'—',
+      shabbatSam:g.shabbatSam||'—', car:g.car||'—',
+      allergies:g.allergies||''
+    });
   }
-  var data={
-    email:document.getElementById('fE').value.trim(),
-    guests:guests
-  };
-  await stpSend(data, btn);
+  await stpSendAll(allRows, btn);
 }
 
-async function stpSend(data, btn){
+// Envoie une requête par personne (format plat, compatible Apps Script existant)
+async function stpSendAll(rows, btn){
   if(!btn) btn=document.getElementById('step0Btn');
   btn.disabled=true;
   btn.textContent='ENVOI EN COURS…';
@@ -985,11 +981,13 @@ async function stpSend(data, btn){
     document.getElementById('rsvpForm').style.display='none';
     document.getElementById('rsvpSending').style.display='block';
     try{
-      await fetch(APPS_SCRIPT_URL,{
-        method:'POST',
-        mode:'no-cors',
-        body:JSON.stringify(data)
-      });
+      for(var i=0;i<rows.length;i++){
+        await fetch(APPS_SCRIPT_URL,{
+          method:'POST',
+          mode:'no-cors',
+          body:JSON.stringify(rows[i])
+        });
+      }
       document.getElementById('rsvpSending').style.display='none';
       document.getElementById('rsvpOk').style.display='block';
     }catch(e){
