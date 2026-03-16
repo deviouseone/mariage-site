@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Morgane & Antoine — Mariage</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
 <style>
@@ -219,7 +219,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
 .sbm.sbm-outline{background:none;border:1px solid var(--brown-dk);color:var(--brown-dk);}
 .sbm.sbm-outline:hover{background:var(--brown-dk);color:var(--white);}
 .stp-cb-row{display:flex;align-items:center;gap:10px;margin-top:16px;margin-bottom:6px;cursor:pointer;}
-.stp-cb-row input[type=checkbox]{width:16px;height:16px;accent-color:var(--brown);}
+.stp-cb-row input[type=checkbox]{width:22px;height:22px;min-width:22px;min-height:22px;accent-color:var(--brown);touch-action:manipulation;}
 .stp-cb-row label{font-size:.88rem;color:var(--text-md);cursor:pointer;}
 .stp-sel-row{margin-top:8px;margin-bottom:4px;display:none;}
 .stp-sel-row.show{display:block;}
@@ -235,6 +235,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
 .stp-recap-tag.non{background:var(--line);color:var(--text);}
 .f-err{font-size:.75rem;color:#c0392b;margin-top:4px;margin-bottom:0;display:none;}
 .ev-err{width:100%;font-size:.7rem;color:#c0392b;margin-top:2px;display:none;}
+.f-inp,.f-ta,.tg,.sbm,.stp-cb-row label,.stp-sel-row select{touch-action:manipulation;}
 
 /* ── FIN ── */
 #fin{background:var(--brown-dk);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 40px;}
@@ -333,20 +334,18 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   .hl-ad{font-size:.75rem;}
   .hl-ph{font-size:.8rem;}
   .rsvp-dl{font-size:.88rem;}
-  .f-inp,.f-ta{font-size:.9rem;padding:10px 12px;}
-  .ev-nm{font-size:.88rem;}
-  .tg{padding:5px 12px;font-size:.65rem;}
-  .sbm{font-size:.65rem;padding:13px;min-height:44px;}
-  .stp-btns{flex-direction:column;align-items:stretch;}
-  .stp-btns .sbm{max-width:100%;min-width:0;width:100%;min-height:44px;}
-  .stp-recap{max-height:38vh;}
-  .stp-recap-nm{font-size:.95rem;}
-  .stp-recap-det{gap:3px 3px;}
-  .stp-recap-tag{font-size:clamp(.4rem,2.2vw,.5rem);padding:2px 4px;letter-spacing:.02em;}
-  .stp-step-title{font-size:1.1rem;margin-bottom:12px;}
+  .f-inp,.f-ta,.stp-sel-row select{font-size:16px!important;padding:10px 12px;}
   .ev-nm{font-size:.82rem;}
   .ev-sub{font-size:.75rem;}
   .tg{padding:5px 10px;font-size:.6rem;min-height:44px;display:inline-flex;align-items:center;}
+  .sbm{font-size:.65rem;padding:13px;min-height:44px;letter-spacing:.14em;}
+  .stp-btns{flex-direction:column;align-items:stretch;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));}
+  .stp-btns .sbm{max-width:100%;min-width:0;width:100%;min-height:48px;font-size:13px;letter-spacing:.12em;white-space:normal;overflow:visible;text-overflow:unset;}
+  .stp-recap{max-height:calc(50vh - 60px);-webkit-overflow-scrolling:touch;}
+  .stp-recap-nm{font-size:.95rem;}
+  .stp-recap-det{flex-direction:column;align-items:flex-start;gap:2px;}
+  .stp-recap-tag{font-size:11px;padding:2px 6px;letter-spacing:.02em;max-width:none;overflow:visible;white-space:nowrap;}
+  .stp-step-title{font-size:1.1rem;margin-bottom:12px;}
   .fin-t{font-size:clamp(2.5rem,14vw,4.5rem);}
   .fin-s{font-size:.65rem;letter-spacing:.15em;}
   #fin{min-height:60vh;padding:60px 24px;}
@@ -355,14 +354,14 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
 /* ── TRÈS PETIT MOBILE (320-374px) ── */
 @media(max-width:374px){
   .arch{padding:28px 14px 40px;}
-  .stp-recap-tag{font-size:clamp(.35rem,2vw,.44rem);padding:2px 3px;letter-spacing:.01em;}
+  .stp-recap-tag{font-size:10px;padding:2px 4px;letter-spacing:.01em;}
   .stp-recap-nm{font-size:.88rem;}
-  .stp-recap-det{gap:2px 2px;}
-  .stp-recap{max-height:35vh;}
-  .stp-btns .sbm{font-size:.58rem;padding:11px 6px;letter-spacing:.14em;}
+  .stp-recap-det{flex-direction:column;align-items:flex-start;gap:2px;}
+  .stp-recap{max-height:calc(45vh - 60px);}
+  .stp-btns .sbm{font-size:12px;padding:11px 6px;letter-spacing:.08em;white-space:normal;}
   .ev-nm{font-size:.78rem;}
   .tg{padding:4px 8px;font-size:.55rem;}
-  .f-inp,.f-ta{font-size:.85rem;padding:9px 10px;}
+  .f-inp,.f-ta,.stp-sel-row select{font-size:16px!important;padding:9px 10px;}
 }
 </style>
 </head>
@@ -774,6 +773,9 @@ function getTogVal(evRow){
 }
 
 // ─── STEPPER RSVP ───
+// Prevent iOS pinch-zoom on form interactions
+document.addEventListener('gesturestart',function(e){e.preventDefault();},{passive:false});
+
 var stpCur=0, stpTotal=1, stpAccCount=0;
 var stpGuests=[]; // tableau de tous les invités
 
