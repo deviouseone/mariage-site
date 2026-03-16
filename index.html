@@ -112,7 +112,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 /* Countdown */
 .cd{display:flex;gap:28px;justify-content:center;margin-top:36px;}
 .cd-u{text-align:center;}
-.cd-n{font-family:'Playfair Display',serif;font-size:clamp(4.5rem,7vw,7rem);font-weight:300;color:var(--brown);display:block;line-height:1;}
+.cd-n{font-family:'Playfair Display',serif;font-size:clamp(5.5rem,9vw,9rem);font-weight:300;color:var(--brown);display:block;line-height:1;}
 .cd-l{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brown-lt);margin-top:8px;display:block;}
 .cd-dt{font-family:'Playfair Display',serif;font-size:3rem;color:var(--line);align-self:center;margin-top:-16px;}
 
@@ -134,9 +134,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 .inv-fam strong{color:var(--brown-dk);font-weight:500;}
 .inv-joy{font-family:'Playfair Display',serif;font-size:1.15rem;font-style:italic;color:var(--text-md);line-height:2;margin:18px 0;text-align:center;}
 .inv-cp{display:flex;align-items:center;justify-content:center;gap:24px;margin:24px 0;}
-.inv-nm{font-family:'Playfair Display',serif;font-size:clamp(3rem,4.8vw,5.2rem);font-weight:300;color:var(--brown);line-height:1;}
+.inv-nm{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,3.2rem);font-weight:300;color:var(--brown);line-height:1;}
 .inv-hb{font-family:'Playfair Display',serif;font-size:2.6rem;color:var(--brown-lt);margin-top:10px;display:block;text-align:center;letter-spacing:.04em;line-height:1.2;}
-.inv-\&{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-style:normal;color:var(--line);}
+.inv-\&{font-family:'Cormorant Garamond',serif;font-size:2rem;font-style:normal;color:var(--line);}
 .inv-div{width:44px;height:1px;background:var(--line);margin:18px auto;}
 .inv-cd{font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--brown);display:block;}
 .inv-hb2{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brown-lt);margin:5px 0;display:block;}
@@ -146,9 +146,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 /* ── SHABBAT ── */
 .sh-hd{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brown-lt);margin-bottom:32px;display:block;}
 .sh-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
-.sh-day{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;letter-spacing:.06em;color:var(--navy);display:block;margin-bottom:22px;}
+.sh-day{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;letter-spacing:.06em;color:#4A7C59;display:block;margin-bottom:22px;}
 .sh-row{display:flex;gap:14px;margin-bottom:14px;align-items:baseline;}
-.sh-t{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--navy);min-width:55px;font-weight:400;}
+.sh-t{font-family:'Playfair Display',serif;font-size:1.25rem;color:#4A7C59;min-width:55px;font-weight:400;}
 .sh-e{font-size:1rem;color:var(--text-md);line-height:1.6;}
 .sh-note{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-size:.8rem;color:var(--brown-lt);font-style:italic;text-align:center;}
 
@@ -204,6 +204,39 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
 .rsvp-ok-t{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--brown);margin-bottom:14px;}
 .rsvp-ok-s{font-size:.9rem;color:var(--text-md);}
 .rsvp-err{display:none;padding:14px 18px;background:#fff0f0;border-left:3px solid #c0392b;font-size:.85rem;color:#c0392b;margin-top:12px;}
+
+/* ── ANIMATION CŒUR RSVP ── */
+@keyframes heartBeat{
+  0%{transform:scale(0);opacity:0;}
+  20%{transform:scale(1.2);opacity:1;}
+  35%{transform:scale(0.9);opacity:1;}
+  50%{transform:scale(1.1);opacity:1;}
+  65%{transform:scale(0.95);opacity:1;}
+  80%{transform:scale(1.05);opacity:1;}
+  90%{transform:scale(1);opacity:1;}
+  100%{transform:scale(1);opacity:0;}
+}
+.heart-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9000;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  background:rgba(255,254,252,.7);
+  backdrop-filter:blur(4px);
+}
+.heart-overlay.show{display:flex;}
+.heart-icon{
+  font-size:clamp(6rem,18vw,12rem);
+  color:var(--brown-dk);
+  line-height:1;
+  animation:heartBeat 2.8s ease forwards;
+}
+@media(max-width:480px){
+  .heart-icon{font-size:clamp(5rem,22vw,9rem);}
+}
 
 /* ── STEPPER RSVP ── */
 .stp-dots{display:flex;gap:8px;justify-content:center;margin-bottom:18px;}
@@ -272,14 +305,14 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   /* Hero */
   .h-names{font-size:clamp(2rem,4.5vw,3rem);}
   .h-amp{font-size:clamp(1.8rem,4vw,2.6rem);}
-  .cd-n{font-size:clamp(2.8rem,5.5vw,4.5rem);}
+  .cd-n{font-size:clamp(3.5rem,6.5vw,6rem);}
   .cd-dt{font-size:2.4rem;}
   /* Sections */
   .sec-t{font-size:clamp(1.5rem,3vw,2.4rem);}
   .big-h{font-size:clamp(3.5rem,7vw,6rem);}
   .big-date{font-size:clamp(1.5rem,3.2vw,2.6rem);}
   /* Mariage */
-  .inv-nm{font-size:clamp(2rem,4.2vw,3.6rem);}
+  .inv-nm{font-size:clamp(1.4rem,3vw,2.4rem);}
   .inv-hb{font-size:2rem;}
   /* Shabbat */
   .sh-grid{gap:28px;}
@@ -308,10 +341,10 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   .sh-grid{grid-template-columns:1fr;gap:28px;}
   .f-row{grid-template-columns:1fr;}
   .cd{gap:12px;}
-  .cd-n{font-size:clamp(2rem,10vw,3rem);}
+  .cd-n{font-size:clamp(2.8rem,12vw,4.5rem);}
   .inv-cp{gap:12px;}
-  .inv-nm{font-size:clamp(2rem,8vw,3rem);}
-  .inv-\&{font-size:2rem;}
+  .inv-nm{font-size:clamp(1.4rem,6vw,2.2rem);}
+  .inv-\&{font-size:1.5rem;}
   .h-names{font-size:clamp(2.2rem,10vw,3.5rem);}
   .h-amp{font-size:clamp(1.8rem,7vw,2.8rem);}
   .big-h{font-size:clamp(3.5rem,16vw,6rem);}
@@ -338,7 +371,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   .h-date{font-size:.65rem;letter-spacing:.15em;}
   .h-lieu{font-size:1rem;}
   .cd{gap:8px;flex-wrap:wrap;justify-content:center;}
-  .cd-n{font-size:clamp(1.8rem,11vw,2.5rem);}
+  .cd-n{font-size:clamp(2.2rem,13vw,3.5rem);}
   .cd-l{font-size:.5rem;}
   .cd-dt{font-size:1.8rem;}
   .big-h{font-size:clamp(3rem,18vw,5rem);}
@@ -348,9 +381,9 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   .big-date{font-size:clamp(1.3rem,8vw,2rem);}
   .inv-fam{font-size:.95rem;}
   .inv-joy{font-size:.95rem;}
-  .inv-nm{font-size:clamp(1.6rem,8vw,2.4rem);}
+  .inv-nm{font-size:clamp(1.2rem,7vw,1.8rem);}
   .inv-hb{font-size:1.5rem;}
-  .inv-&{font-size:1.5rem;}
+  .inv-&{font-size:1.2rem;}
   .inv-cd{font-size:1.3rem;}
   .inv-det{font-size:1rem;}
   .inv-mem{font-size:.8rem;}
@@ -389,6 +422,15 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   .fin-t{font-size:clamp(2.5rem,14vw,4.5rem);}
   .fin-s{font-size:.65rem;letter-spacing:.15em;}
   #fin{min-height:60vh;padding:60px 24px;}
+}
+
+/* ── BANNIÈRE VOL MOBILE ── */
+@media(max-width:520px){
+  #vols .arch-inner [style*="white-space:nowrap"]{
+    white-space:normal!important;
+    font-size:.55rem!important;
+    letter-spacing:.12em!important;
+  }
 }
 
 /* ── TRÈS PETIT MOBILE (320-374px) ── */
@@ -431,6 +473,11 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
     <span></span><span></span><span></span>
   </button>
 </nav>
+
+<!-- ══ HEART OVERLAY ══ -->
+<div class="heart-overlay" id="heartOverlay">
+  <span class="heart-icon">&#10084;</span>
+</div>
 
 <!-- ══ HERO ══ -->
 <section id="hero" class="slide" style="padding-top:60px">
@@ -569,7 +616,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
       <span style="font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:var(--brown-lt);display:block;margin-bottom:28px;">Aéroport de Figari Sud Corse</span>
 
       <div style="background:var(--brown-dk);padding:12px 28px;margin-bottom:28px;">
-        <span style="font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--white);">✦ &nbsp; Tarif de Groupe — Mariage Morgane & Antoine &nbsp; ✦</span>
+        <span style="font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--white);white-space:nowrap;">✦ &nbsp; Tarif de Groupe — Mariage Morgane &amp; Antoine &nbsp; ✦</span>
       </div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
@@ -587,18 +634,6 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
         </div>
       </div>
 
-      <div style="display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:14px;">
-        <div style="flex:1;max-width:120px;height:1px;background:var(--line);"></div>
-        <span style="font-size:.6rem;color:var(--brown-lt);">◆</span>
-        <div style="flex:1;max-width:120px;height:1px;background:var(--line);"></div>
-      </div>
-      <p style="font-family:'Playfair Display',serif;font-size:.95rem;font-style:italic;color:var(--brown-lt);margin-bottom:6px;">Veuillez contacter directement l'agence</p>
-      <p style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;color:var(--brown);margin-bottom:6px;"><a href="tel:0679779550" style="color:var(--brown);text-decoration:none;">06 79 77 95 50</a></p>
-      <span style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brown-lt);display:block;margin-bottom:4px;">ou par email</span>
-      <p style="font-size:.95rem;"><a href="mailto:albavoyages@orange.fr" style="color:var(--brown-dk);text-decoration:none;font-weight:400;">albavoyages@orange.fr</a></p>
-
-      <div style="width:100%;height:1px;background:var(--line);margin:32px 0;"></div>
-      <span style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brown-lt);display:block;">Réservations & Informations</span>
     </div>
 
     <!-- 🚗 VOITURE -->
@@ -658,7 +693,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
 
     <div style="width:100%;height:1px;background:var(--line);margin:0 auto 22px;"></div>
 
-    <p style="font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:var(--text-md);line-height:1.8;text-align:center;margin-bottom:18px;">
+    <p style="font-family:'Playfair Display',serif;font-size:1.05rem;font-style:normal;color:var(--text-md);line-height:1.8;text-align:center;margin-bottom:18px;">
       Réservation par téléphone en mentionnant<br>le mariage de Morgane <span style="font-family:'Cormorant Garamond',serif;font-size:1.3em;">&</span> Antoine
     </p>
 
@@ -674,7 +709,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
     </div>
 
     <div style="background:var(--brown-dk);padding:12px 24px;margin-bottom:22px;">
-      <span style="font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white);">Mercredi 7 oct. → Dimanche 11 oct. 2026</span>
+      <span style="font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white);">Mercredi 7 oct → Dimanche 11 oct 2026</span>
     </div>
 
     <div style="display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:14px;">
@@ -703,8 +738,8 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   <div class="arch rv" style="transition-delay:.12s">
     <div class="arch-inner">
     <p style="font-size:.85rem;color:var(--brown-lt);text-align:center;margin-bottom:8px;line-height:1.8;">À proximité du Mariosa, dans un périmètre de 15 min à pieds.</p>
-    <p style="font-family:'Montserrat',sans-serif;font-size:1.05rem;text-align:center;margin-bottom:26px;color:var(--text-md);">Appelez en précisant le mariage de<br><strong style="color:var(--brown-dk);">Morgane <span style="font-family:'Cormorant Garamond',serif;font-size:1.2em;">&</span> Antoine</strong></p>
-    <div class="hl"><div><div class="hl-st">★★★★★</div><a href="https://www.casadelmar.fr/fr/" target="_blank" rel="noopener noreferrer" class="hl-nm hl-link">Hotel Casadelmar</a><div class="hl-ad">Route de Palombaggia, 20137 Porto-Vecchio</div><div class="hl-ph"><a href="tel:0495723434" style="color:var(--brown-md);text-decoration:none">04 95 72 34 34</a></div></div><span class="hl-pk">–10%</span></div>
+    <p style="font-family:'Montserrat',sans-serif;font-size:1.05rem;text-align:center;margin-bottom:26px;color:var(--text-md);">Appelez en précisant le mariage de<br><strong style="color:var(--brown-dk);display:block;text-align:center;">Morgane <span style="font-family:'Cormorant Garamond',serif;font-size:1.2em;">&</span> Antoine</strong></p>
+    <div class="hl"><div><div class="hl-st">★★★★★</div><a href="https://www.casadelmar.fr/fr/" target="_blank" rel="noopener noreferrer" class="hl-nm hl-link">Hotel Casadelmar</a><div class="hl-ad">Route de Palombaggia, 20137 Porto-Vecchio</div><div class="hl-ph"><a href="tel:0495723434" style="color:var(--brown-md);text-decoration:none">04 95 72 34 34</a></div></div><span class="hl-pk">–15%</span></div>
     <div class="hl"><div><div class="hl-st">★★★★</div><a href="https://www.rivabeachhotel.com/" target="_blank" rel="noopener noreferrer" class="hl-nm hl-link">Hotel Riva Beach</a><div class="hl-ad">Route de Piccovaggia, 20137 Porto-Vecchio</div><div class="hl-ph"><a href="tel:0495249613" style="color:var(--brown-md);text-decoration:none">04 95 24 96 13</a></div></div></div>
     <div class="hl"><div><div class="hl-st">★★★★</div><a href="https://www.hbcorsica.com/" target="_blank" rel="noopener noreferrer" class="hl-nm hl-link">Hotel Le Belvédère</a><div class="hl-ad">Route de Palombaggia, 20137 Porto-Vecchio</div><div class="hl-ph"><a href="tel:0495705413" style="color:var(--brown-md);text-decoration:none">04 95 70 54 13</a></div></div></div>
     <div class="hl"><div><div class="hl-st">★★★★</div><a href="https://www.maranathacorse.com/" target="_blank" rel="noopener noreferrer" class="hl-nm hl-link">Résidence Maranatha</a><div class="hl-ad">Route de Piccovaggia, 20137 Porto-Vecchio</div><div class="hl-ph"><a href="tel:0667781310" style="color:var(--brown-md);text-decoration:none">06 67 78 13 10</a></div></div><span class="hl-pk">–10%</span></div>
@@ -725,7 +760,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   <div class="arch rv" style="transition-delay:.12s">
     <div class="arch-inner">
     <div id="rsvpForm">
-      <div class="rsvp-dl" style="text-align:center;">Merci de confirmer votre présence avant le<br><strong style="display:block;text-align:center;margin:6px 0;">26 mai 2026</strong><br>Enregistrez chaque personne invitée, enfants compris.<br>Pour tout +1 supplémentaire non prévu, merci de nous contacter au préalable afin que nous puissions en discuter ensemble.</div>
+      <div class="rsvp-dl" style="text-align:center;">Merci de confirmer votre présence avant le<br><strong style="display:block;text-align:center;margin:6px 0;">26 mai 2026</strong><br>Enregistrez chaque personne invitée, enfants compris.<br><br>Pour tout +1 supplémentaire non prévu, merci de nous contacter au préalable afin que nous puissions en discuter ensemble.<br><br></div>
 
       <!-- DOTS -->
       <div class="stp-dots" id="stpDots"><span class="stp-dot active"></span></div>
@@ -781,7 +816,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
       <p style="font-size:1rem;color:var(--text-md)">Envoi en cours…</p>
     </div>
     <div class="rsvp-ok" id="rsvpOk">
-      <p class="rsvp-ok-t">Merci ! <span style="color:var(--brown)">&#10084;</span></p>
+      <p class="rsvp-ok-t">Merci !</p>
       <p class="rsvp-ok-s">Votre réponse a bien été enregistrée.<br>À très vite !</p>
     </div>
     </div><!-- /arch-inner -->
@@ -1122,6 +1157,7 @@ async function stpSendAll(rows, btn){
         });
       }
       document.getElementById('rsvpSending').style.display='none';
+      showHeartAnimation();
       document.getElementById('rsvpOk').style.display='block';
     }catch(e){
       document.getElementById('rsvpSending').style.display='none';
@@ -1132,8 +1168,18 @@ async function stpSendAll(rows, btn){
     }
   } else {
     document.getElementById('rsvpForm').style.display='none';
+    showHeartAnimation();
     document.getElementById('rsvpOk').style.display='block';
   }
+}
+
+function showHeartAnimation(){
+  var overlay=document.getElementById('heartOverlay');
+  if(!overlay) return;
+  // Recréer l'icône pour relancer l'animation
+  overlay.innerHTML='<span class="heart-icon">&#10084;</span>';
+  overlay.classList.add('show');
+  setTimeout(function(){ overlay.classList.remove('show'); }, 2900);
 }
 
 function showErr(msg){
