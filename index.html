@@ -103,7 +103,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 #hero{background:var(--taupe);padding-top:60px;animation:heroIn .8s ease .8s both;}@keyframes heroIn{from{opacity:.4}to{opacity:1}}
 #hero .arch{background:#FFFEFC;align-items:center;text-align:center;}
 .h-tag{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brown-lt);margin-bottom:24px;display:block;}
-.h-names{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,4.2rem);font-weight:300;line-height:.92;color:var(--brown);letter-spacing:.12em;text-transform:uppercase;}
+.h-names{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,4.2rem);font-weight:300;line-height:.92;color:var(--brown);letter-spacing:0;text-transform:uppercase;}
 .h-amp{display:block;font-style:normal;font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,4.2rem);color:var(--brown-lt);margin:.18em 0;}
 .h-div{width:55px;height:1px;background:var(--line);margin:32px auto;}
 .h-date{font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--text-md);margin-bottom:8px;}
@@ -427,9 +427,9 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
 /* ── BANNIÈRE VOL MOBILE ── */
 @media(max-width:520px){
   #vols .arch-inner [style*="white-space:nowrap"]{
-    white-space:normal!important;
-    font-size:.55rem!important;
-    letter-spacing:.12em!important;
+    white-space:nowrap!important;
+    font-size:.48rem!important;
+    letter-spacing:.08em!important;
   }
 }
 
@@ -516,12 +516,12 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
     <span style="font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brown-lt);display:block;margin-bottom:18px;">CÉRÉMONIE CIVILE</span>
     <span class="big-h" style="font-size:clamp(4rem,6vw,7rem);">14h00</span>
     <div style="width:40px;height:1px;background:var(--line);margin:20px auto;"></div>
-    <span style="font-family:'Playfair Display',serif;font-size:clamp(1rem,1.8vw,1.3rem);color:var(--brown-lt);display:block;margin-bottom:6px;">Mairie de Neuilly-sur-Seine</span>
-    <span style="font-size:.85rem;color:var(--brown-lt);display:block;margin-bottom:18px;">96 Av. Achille Peretti, 92200 Neuilly-sur-Seine</span>
+    <span style="font-family:'Playfair Display',serif;font-size:clamp(1rem,1.8vw,1.3rem);color:var(--brown);display:block;margin-bottom:6px;">Mairie de Neuilly-sur-Seine</span>
+    <span style="font-size:.85rem;color:var(--brown);display:block;margin-bottom:18px;">96 Av. Achille Peretti, 92200 Neuilly-sur-Seine</span>
     <div style="width:40px;height:1px;background:var(--line);margin:0 auto 18px;"></div>
-    <span style="font-size:.85rem;color:var(--text-md);display:block;margin-bottom:28px;">Suivi d'un vin d'honneur à 15h30</span>
+    <span style="font-size:.85rem;color:#CCA881;display:block;margin-bottom:28px;">Suivi d'un vin d'honneur à 15h30</span>
     <div style="width:40px;height:1px;background:var(--line);margin:0 auto 22px;"></div>
-    <span style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.4vw,2rem);font-weight:300;color:var(--brown);letter-spacing:.08em;display:block;">10 septembre 2026</span>
+    <span style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.4vw,2rem);font-weight:300;color:var(--brown);letter-spacing:.08em;display:block;">10 <span style="font-size:.7em;letter-spacing:.03em;">septembre</span> 2026</span>
     </div><!-- /arch-inner -->
   </div>
 </section>
@@ -638,24 +638,24 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
 
     <!-- 🚗 VOITURE -->
     <div style="border-top:1px solid var(--line);padding-top:32px;margin-bottom:32px;">
-      <h2 class="sec-t" style="text-align:center;">Voiture de location</h2>
-      <p style="font-size:1rem;color:var(--text-md);line-height:1.9;text-align:center;">Tarif préférentiel avec l'agence ou sur Air Corsica, partenaires <strong style="color:var(--brown-dk)">HERTZ</strong>.</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;color:var(--brown);text-align:center;margin-bottom:24px;line-height:1.1;">Voiture de location</h2>
+      <p style="font-size:1rem;color:var(--text-md);line-height:1.9;text-align:center;">Tarif préférentiel avec l'agence ou sur Air Corsica, partenaires de <strong style="color:var(--brown-dk)">HERTZ</strong>.</p>
     </div>
 
     <!-- 🚌 NAVETTES -->
     <div style="border-top:1px solid var(--line);padding-top:32px;">
-      <h2 class="sec-t" style="text-align:center;">Navettes pour vous accompagner à la cérémonie</h2>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;color:var(--brown);text-align:center;margin-bottom:24px;line-height:1.1;">Navettes pour vous accompagner à la cérémonie</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
         <div style="border:1px solid var(--line);padding:20px 18px;text-align:left;">
           <span style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brown-lt);display:block;margin-bottom:8px;">Aller</span>
           <span style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:var(--brown-dk);display:block;margin-bottom:6px;">Mariosa → Pinarello</span>
-          <span style="font-size:.85rem;color:var(--text-md);display:block;margin-bottom:4px;">Samedi 10 octobre 2026</span>
+          <span style="font-size:.85rem;color:var(--text-md);display:block;margin-bottom:4px;">Jeudi 08 octobre 2026</span>
           <span style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:300;color:var(--brown-lt);">Départ à 15H45</span>
         </div>
         <div style="border:1px solid var(--line);padding:20px 18px;text-align:left;">
           <span style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brown-lt);display:block;margin-bottom:8px;">Retour</span>
           <span style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:var(--brown-dk);display:block;margin-bottom:6px;">Pinarello → Mariosa</span>
-          <span style="font-size:.85rem;color:var(--text-md);display:block;margin-bottom:4px;">Samedi 10 octobre 2026</span>
+          <span style="font-size:.85rem;color:var(--text-md);display:block;margin-bottom:4px;">Jeudi 08 octobre 2026</span>
           <span style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:300;color:var(--brown-lt);">Toutes les 30 min dès minuit</span>
         </div>
       </div>
@@ -679,7 +679,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
 
     <span class="h-stars">★★★★</span>
     <a href="https://hotelmariosa.com/" target="_blank" rel="noopener noreferrer" class="h-name hl-link" style="margin-bottom:10px;">LE MARIOSA</a>
-    <span class="h-badge">Hôtel des mariés & du Shabbat Hatan</span>
+    <span class="h-badge">◆ Hôtel des mariés & du Shabbat Hatan ◆</span>
 
     <div style="display:flex;align-items:center;gap:12px;justify-content:center;margin:24px 0 18px;">
       <div style="flex:1;max-width:80px;height:1px;background:var(--line);"></div>
@@ -687,29 +687,24 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
       <div style="flex:1;max-width:80px;height:1px;background:var(--line);"></div>
     </div>
 
-    <p style="font-size:.9rem;color:var(--text-md);line-height:1.8;text-align:center;margin-bottom:4px;">Route de Palombaggia, par Piccovaggia</p>
-    <p style="font-size:.9rem;color:var(--text-md);text-align:center;margin-bottom:12px;">20137 Porto-Vecchio</p>
-    <p style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,1.8rem);font-weight:300;color:var(--brown);margin-bottom:20px;"><a href="tel:0495701777" style="color:var(--brown);text-decoration:none;">04 95 70 17 77</a></p>
+    <p style="font-size:.9rem;color:#C0A99B;line-height:1.8;text-align:center;margin-bottom:4px;">Route de Palombaggia, par Piccovaggia 20137 Porto-Vecchio</p>
+    <p style="font-family:'Montaser Arabic',sans-serif;font-size:clamp(1.4rem,2.5vw,1.8rem);font-weight:300;color:var(--brown);margin-bottom:20px;"><a href="tel:0495701777" style="color:var(--brown);text-decoration:none;font-family:'Montaser Arabic',sans-serif;">04 95 70 17 77</a></p>
 
     <div style="width:100%;height:1px;background:var(--line);margin:0 auto 22px;"></div>
 
-    <p style="font-family:'Playfair Display',serif;font-size:1.05rem;font-style:normal;color:var(--text-md);line-height:1.8;text-align:center;margin-bottom:18px;">
-      Réservation par téléphone en mentionnant<br>le mariage de Morgane <span style="font-family:'Cormorant Garamond',serif;font-size:1.3em;">&</span> Antoine
+    <p style="font-family:'Montaser Arabic',sans-serif;font-size:1.05rem;font-style:normal;color:#C0A99B;line-height:1.8;text-align:center;margin-bottom:18px;">
+      Réservation par téléphone en mentionnant<br>le mariage de <span style="color:#826452;font-weight:500;">Morgane <span style="font-family:'Cormorant Garamond',serif;font-size:1.3em;">&</span> Antoine</span>
     </p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px;">
-      <div style="border:1px solid var(--line);padding:16px 14px;">
-        <span style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:300;color:var(--brown);display:block;margin-bottom:4px;">–20%</span>
-        <span style="font-size:.75rem;color:var(--text-md);">sur les chambres<br>(hors petit-déjeuner)</span>
-      </div>
-      <div style="border:1px solid var(--line);padding:16px 14px;">
+    <div style="display:flex;justify-content:center;margin-bottom:22px;">
+      <div style="border:1px solid var(--line);padding:16px 14px;min-width:140px;text-align:center;">
         <span style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:300;color:var(--brown);display:block;margin-bottom:4px;">4 nuits</span>
-        <span style="font-size:.75rem;color:var(--text-md);">Réservation<br>uniquement</span>
+        <span style="font-size:.75rem;color:var(--text-md);">uniquement acceptées</span>
       </div>
     </div>
 
     <div style="background:var(--brown-dk);padding:12px 24px;margin-bottom:22px;">
-      <span style="font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white);">Mercredi 7 oct → Dimanche 11 oct 2026</span>
+      <span style="font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white);">◆ Mercredi 7 OCT → Dimanche 11 OCT 2026 ◆</span>
     </div>
 
     <div style="display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:14px;">
@@ -763,7 +758,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
       <div class="rsvp-dl" style="text-align:center;">Merci de confirmer votre présence avant le<br><strong style="display:block;text-align:center;margin:6px 0;">26 mai 2026</strong><br>Enregistrez chaque personne invitée, enfants compris.<br><br>Pour tout +1 supplémentaire non prévu, merci de nous contacter au préalable afin que nous puissions en discuter ensemble.<br><br></div>
 
       <!-- DOTS -->
-      <div class="stp-dots" id="stpDots"><span class="stp-dot active"></span></div>
+      <div class="stp-dots" id="stpDots" style="display:none;"></div>
 
       <!-- VIEWPORT -->
       <div class="stp-viewport">
