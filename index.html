@@ -112,7 +112,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 /* Countdown */
 .cd{display:flex;gap:28px;justify-content:center;margin-top:36px;}
 .cd-u{text-align:center;}
-.cd-n{font-family:'Playfair Display',serif;font-size:clamp(5.5rem,9vw,9rem);font-weight:300;color:var(--brown);display:block;line-height:1;}
+.cd-n{font-family:'Playfair Display',serif;font-size:clamp(4.2rem,7vw,7rem);font-weight:300;color:var(--brown);display:block;line-height:1;}
 .cd-l{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brown-lt);margin-top:8px;display:block;}
 .cd-dt{font-family:'Playfair Display',serif;font-size:3rem;color:var(--line);align-self:center;margin-top:-16px;}
 
@@ -305,7 +305,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   /* Hero */
   .h-names{font-size:clamp(2rem,4.5vw,3rem);}
   .h-amp{font-size:clamp(1.8rem,4vw,2.6rem);}
-  .cd-n{font-size:clamp(3.5rem,6.5vw,6rem);}
+  .cd-n{font-size:clamp(2.8rem,5.5vw,5rem);}
   .cd-dt{font-size:2.4rem;}
   /* Sections */
   .sec-t{font-size:clamp(1.5rem,3vw,2.4rem);}
@@ -513,15 +513,42 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   </div>
   <div class="arch c rv" style="transition-delay:.12s">
     <div class="arch-inner">
-    <span style="font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brown-lt);display:block;margin-bottom:18px;">CÉRÉMONIE CIVILE</span>
+    <div style="border:1px solid var(--line);padding:36px 28px;text-align:center;">
+    <span style="font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brown-lt);display:block;margin-bottom:22px;">CÉRÉMONIE CIVILE</span>
+
+    <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:22px;">
+      <div style="flex:1;height:1px;background:var(--line);"></div>
+      <span style="font-size:.7rem;color:var(--brown-lt);">◆</span>
+      <div style="flex:1;height:1px;background:var(--line);"></div>
+    </div>
+
     <span class="big-h" style="font-size:clamp(4rem,6vw,7rem);">14h00</span>
-    <div style="width:40px;height:1px;background:var(--line);margin:20px auto;"></div>
-    <span style="font-family:'Playfair Display',serif;font-size:clamp(1rem,1.8vw,1.3rem);color:var(--brown);display:block;margin-bottom:6px;">Mairie de Neuilly-sur-Seine</span>
-    <span style="font-size:.85rem;color:var(--brown);display:block;margin-bottom:18px;">96 Av. Achille Peretti, 92200 Neuilly-sur-Seine</span>
-    <div style="width:40px;height:1px;background:var(--line);margin:0 auto 18px;"></div>
+
+    <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin:22px 0;">
+      <div style="flex:1;height:1px;background:var(--line);"></div>
+      <span style="font-size:.7rem;color:var(--brown-lt);">◆</span>
+      <div style="flex:1;height:1px;background:var(--line);"></div>
+    </div>
+
+    <span style="font-family:'Playfair Display',serif;font-size:clamp(1rem,1.8vw,1.3rem);color:var(--brown);display:block;margin-bottom:6px;">📍 Mairie de Neuilly-sur-Seine</span>
+    <span style="font-size:.85rem;color:var(--brown);display:block;margin-bottom:22px;">96 Av. Achille Peretti,<br>92200 Neuilly-sur-Seine</span>
+
+    <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:22px;">
+      <div style="flex:1;height:1px;background:var(--line);"></div>
+      <span style="font-size:.7rem;color:var(--brown-lt);">◆</span>
+      <div style="flex:1;height:1px;background:var(--line);"></div>
+    </div>
+
     <span style="font-size:.85rem;color:#CCA881;display:block;margin-bottom:28px;">Suivi d'un vin d'honneur à 15h30</span>
-    <div style="width:40px;height:1px;background:var(--line);margin:0 auto 22px;"></div>
-    <span style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.4vw,2rem);font-weight:300;color:var(--brown);letter-spacing:.08em;display:block;">10 <span style="font-size:.7em;letter-spacing:.03em;">septembre</span> 2026</span>
+
+    <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:24px;">
+      <div style="flex:1;height:1px;background:var(--line);"></div>
+      <span style="font-size:.7rem;color:var(--brown-lt);">◆</span>
+      <div style="flex:1;height:1px;background:var(--line);"></div>
+    </div>
+
+    <span style="font-family:'Montaser Arabic',sans-serif;font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.4vw,2rem);font-weight:300;color:var(--brown);letter-spacing:.08em;display:block;">10 SEPTEMBRE 2026</span>
+    </div><!-- /border frame -->
     </div><!-- /arch-inner -->
   </div>
 </section>
@@ -638,17 +665,18 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
 
     <!-- 🚗 VOITURE -->
     <div style="border-top:1px solid var(--line);padding-top:32px;margin-bottom:32px;">
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;color:var(--brown);text-align:center;margin-bottom:24px;line-height:1.1;">Voiture de location</h2>
-      <p style="font-size:1rem;color:var(--text-md);line-height:1.9;text-align:center;">Tarif préférentiel avec l'agence ou sur Air Corsica, partenaires de <strong style="color:var(--brown-dk)">HERTZ</strong>.</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:300;color:var(--brown);text-align:center;margin-bottom:24px;line-height:1.1;letter-spacing:0;">Voiture de location</h2>
+      <p style="font-size:1rem;color:var(--text-md);line-height:1.9;text-align:center;"><span style="color:#C0A99B;">Tarif préférentiel avec l'agence ou sur Air Corsica, partenaires de</span> <strong style="color:var(--brown-dk)">HERTZ</strong>.</p>
+      <p style="font-size:.92rem;color:var(--text-md);line-height:2;text-align:center;margin-top:12px;"><span style="font-family:'Montaser Arabic',sans-serif;color:var(--brown);">04 95 71 05 05</span><br><span style="font-family:'Montaser Arabic',sans-serif;color:var(--brown);">hertz.figari@gmail.com</span></p>
     </div>
 
     <!-- 🚌 NAVETTES -->
     <div style="border-top:1px solid var(--line);padding-top:32px;">
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;color:var(--brown);text-align:center;margin-bottom:24px;line-height:1.1;">Navettes pour vous accompagner à la cérémonie</h2>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:300;color:var(--brown);text-align:center;margin-bottom:24px;line-height:1.1;letter-spacing:0;">Navette pour vous accompagner à la cérémonie</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
         <div style="border:1px solid var(--line);padding:20px 18px;text-align:left;">
           <span style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brown-lt);display:block;margin-bottom:8px;">Aller</span>
-          <span style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:var(--brown-dk);display:block;margin-bottom:6px;">Mariosa → Pinarello</span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:var(--brown-dk);display:block;margin-bottom:6px;">Hôtel le Marissa → Château de Pinarello</span>
           <span style="font-size:.85rem;color:var(--text-md);display:block;margin-bottom:4px;">Jeudi 08 octobre 2026</span>
           <span style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:300;color:var(--brown-lt);">Départ à 15H45</span>
         </div>
@@ -692,8 +720,8 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
 
     <div style="width:100%;height:1px;background:var(--line);margin:0 auto 22px;"></div>
 
-    <p style="font-family:'Montaser Arabic',sans-serif;font-size:1.05rem;font-style:normal;color:#C0A99B;line-height:1.8;text-align:center;margin-bottom:18px;">
-      Réservation par téléphone en mentionnant<br>le mariage de <span style="color:#826452;font-weight:500;">Morgane <span style="font-family:'Cormorant Garamond',serif;font-size:1.3em;">&</span> Antoine</span>
+    <p style="font-family:'Montaser Arabic',sans-serif;font-size:1.05rem;font-style:normal;color:#C0A99B;line-height:1.8;text-align:center;margin-bottom:18px;font-weight:normal;">
+      Réservation par téléphone en mentionnant<br>le mariage de <span style="color:#826452;font-weight:normal;">Morgane <span style="font-family:'Cormorant Garamond',serif;font-size:1.3em;">&</span> Antoine</span>
     </p>
 
     <div style="display:flex;justify-content:center;margin-bottom:22px;">
@@ -714,7 +742,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
     </div>
 
     <p style="font-size:.88rem;color:var(--text-md);line-height:1.8;text-align:center;">
-      Petit-déjeuner : <strong style="color:var(--brown-dk);">15€ TTC</strong><br>Ne peut pas être ajouté sur place, merci de le préciser impérativement au moment de la réservation.
+      <span style="color:#C0A99B;">Petit-déjeuner :</span> <strong style="color:var(--brown-dk);">15€ TTC</strong><br><span style="color:#C0A99B;">Ne peut pas être ajouté sur place, merci de le préciser impérativement au moment de la réservation.</span>
     </p>
 
     </div><!-- /arch-inner -->
@@ -778,9 +806,9 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
             <div class="ev-row"><span class="ev-nm">MAIRIE</span><div class="tg-g"><button type="button" class="tg" onclick="tg(this,'oui')">OUI</button><button type="button" class="tg" onclick="tg(this,'non')">NON</button></div></div>
             <div class="ev-row"><span class="ev-nm">AFTER-MAIRIE</span><div class="tg-g"><button type="button" class="tg" onclick="tg(this,'oui')">OUI</button><button type="button" class="tg" onclick="tg(this,'non')">NON</button></div></div>
             <div class="ev-row"><span class="ev-nm">HOUPPA & SOIRÉE</span><div class="tg-g"><button type="button" class="tg" onclick="tg(this,'oui')">OUI</button><button type="button" class="tg" onclick="tg(this,'non')">NON</button></div></div>
+            <div class="ev-row"><div><span class="ev-nm">Présence dans le car pour la houppa</span><span class="ev-sub">Départ Mariosa 15h45</span></div><div class="tg-g"><button type="button" class="tg" onclick="tg(this,'oui')">OUI</button><button type="button" class="tg" onclick="tg(this,'non')">NON</button></div></div>
             <div class="ev-row"><div><span class="ev-nm">SHABBAT HATAN</span><span class="ev-sub">Vendredi soir</span></div><div class="tg-g"><button type="button" class="tg" onclick="tg(this,'oui')">OUI</button><button type="button" class="tg" onclick="tg(this,'non')">NON</button></div></div>
             <div class="ev-row"><div><span class="ev-nm">SHABBAT HATAN</span><span class="ev-sub">Samedi midi</span></div><div class="tg-g"><button type="button" class="tg" onclick="tg(this,'oui')">OUI</button><button type="button" class="tg" onclick="tg(this,'non')">NON</button></div></div>
-            <div class="ev-row"><div><span class="ev-nm">PRÉSENCE DANS LE CAR</span><span class="ev-sub">Départ Mariosa 15h45</span></div><div class="tg-g"><button type="button" class="tg" onclick="tg(this,'oui')">OUI</button><button type="button" class="tg" onclick="tg(this,'non')">NON</button></div></div>
 
             <label class="f-lbl" style="margin-top:16px">Allergies alimentaires</label>
             <textarea class="f-ta" id="fA" placeholder="Précisez vos allergies éventuelles…"></textarea>
@@ -900,9 +928,9 @@ function stpBuildSteps(){
       '<div class="ev-row"><span class="ev-nm">MAIRIE</span><div class="tg-g"><button type="button" class="tg" onclick="tg(this,\'oui\')">OUI</button><button type="button" class="tg" onclick="tg(this,\'non\')">NON</button></div></div>'+
       '<div class="ev-row"><span class="ev-nm">AFTER-MAIRIE</span><div class="tg-g"><button type="button" class="tg" onclick="tg(this,\'oui\')">OUI</button><button type="button" class="tg" onclick="tg(this,\'non\')">NON</button></div></div>'+
       '<div class="ev-row"><span class="ev-nm">HOUPPA & SOIRÉE</span><div class="tg-g"><button type="button" class="tg" onclick="tg(this,\'oui\')">OUI</button><button type="button" class="tg" onclick="tg(this,\'non\')">NON</button></div></div>'+
+      '<div class="ev-row"><div><span class="ev-nm">Présence dans le car pour la houppa</span><span class="ev-sub">Départ Mariosa 15h45</span></div><div class="tg-g"><button type="button" class="tg" onclick="tg(this,\'oui\')">OUI</button><button type="button" class="tg" onclick="tg(this,\'non\')">NON</button></div></div>'+
       '<div class="ev-row"><div><span class="ev-nm">SHABBAT HATAN</span><span class="ev-sub">Vendredi soir</span></div><div class="tg-g"><button type="button" class="tg" onclick="tg(this,\'oui\')">OUI</button><button type="button" class="tg" onclick="tg(this,\'non\')">NON</button></div></div>'+
       '<div class="ev-row"><div><span class="ev-nm">SHABBAT HATAN</span><span class="ev-sub">Samedi midi</span></div><div class="tg-g"><button type="button" class="tg" onclick="tg(this,\'oui\')">OUI</button><button type="button" class="tg" onclick="tg(this,\'non\')">NON</button></div></div>'+
-      '<div class="ev-row"><div><span class="ev-nm">PRÉSENCE DANS LE CAR</span><span class="ev-sub">Départ Mariosa 15h45</span></div><div class="tg-g"><button type="button" class="tg" onclick="tg(this,\'oui\')">OUI</button><button type="button" class="tg" onclick="tg(this,\'non\')">NON</button></div></div>'+
       '<label class="f-lbl" style="margin-top:16px">Allergies alimentaires</label>'+
       '<textarea class="f-ta" id="aR'+i+'" placeholder="Précisez les allergies éventuelles…" style="min-height:50px;"></textarea>'+
       '<div class="stp-btns">'+
@@ -1029,9 +1057,9 @@ function stpNext(stepIdx){
       mairie:getTogVal(rows[0]),
       afterMairie:getTogVal(rows[1]),
       houppa:getTogVal(rows[2]),
-      shabbatVen:getTogVal(rows[3]),
-      shabbatSam:getTogVal(rows[4]),
-      car:getTogVal(rows[5]),
+      car:getTogVal(rows[3]),
+      shabbatVen:getTogVal(rows[4]),
+      shabbatSam:getTogVal(rows[5]),
       allergies:document.getElementById('fA').value.trim(),
       presence:'Oui'
     };
@@ -1063,9 +1091,9 @@ function stpNext(stepIdx){
       mairie:getTogVal(accRows[0]),
       afterMairie:getTogVal(accRows[1]),
       houppa:getTogVal(accRows[2]),
-      shabbatVen:getTogVal(accRows[3]),
-      shabbatSam:getTogVal(accRows[4]),
-      car:getTogVal(accRows[5]),
+      car:getTogVal(accRows[3]),
+      shabbatVen:getTogVal(accRows[4]),
+      shabbatSam:getTogVal(accRows[5]),
       allergies:document.getElementById('aR'+stepIdx).value.trim()
     };
 
