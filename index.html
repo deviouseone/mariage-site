@@ -91,6 +91,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;ali
 .sl-ttl em{font-style:italic;}
 .sl-menu{margin-top:44px;list-style:none;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38);line-height:3.2;}
 .sl-menu li.on{color:rgba(255,255,255,.8);font-weight:500;}
+.sl-menu li:not(.on){cursor:pointer;}
 
 .arch{flex:1;background:var(--cream);border-radius:50% 0 0 50% / 46% 0 0 46%;margin-left:-60px;padding:80px 72px 80px 100px;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;z-index:2;box-shadow:-10px 0 50px rgba(80,50,30,.08);min-height:100vh;overflow-y:auto;}
 .arch::-webkit-scrollbar{display:none;}
@@ -513,41 +514,41 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   </div>
   <div class="arch c rv" style="transition-delay:.12s">
     <div class="arch-inner">
-    <div style="border:1px solid var(--line);padding:36px 28px;text-align:center;">
-    <span style="font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brown-lt);display:block;margin-bottom:22px;">CÉRÉMONIE CIVILE</span>
+    <div style="border:1px solid var(--line);padding:52px 40px;text-align:center;">
+    <span style="font-size:.82rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brown-lt);display:block;margin-bottom:32px;">CÉRÉMONIE CIVILE</span>
 
-    <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:22px;">
+    <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:32px;">
       <div style="flex:1;height:1px;background:var(--line);"></div>
-      <span style="font-size:.7rem;color:var(--brown-lt);">◆</span>
-      <div style="flex:1;height:1px;background:var(--line);"></div>
-    </div>
-
-    <span class="big-h" style="font-size:clamp(4rem,6vw,7rem);">14h00</span>
-
-    <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin:22px 0;">
-      <div style="flex:1;height:1px;background:var(--line);"></div>
-      <span style="font-size:.7rem;color:var(--brown-lt);">◆</span>
+      <span style="font-size:.82rem;color:var(--brown-lt);">◆</span>
       <div style="flex:1;height:1px;background:var(--line);"></div>
     </div>
 
-    <span style="font-family:'Playfair Display',serif;font-size:clamp(1rem,1.8vw,1.3rem);color:var(--brown);display:block;margin-bottom:6px;">📍 Mairie de Neuilly-sur-Seine</span>
-    <span style="font-size:.85rem;color:var(--brown);display:block;margin-bottom:22px;">96 Av. Achille Peretti,<br>92200 Neuilly-sur-Seine</span>
+    <span class="big-h" style="font-size:clamp(5rem,7vw,8rem);">14h00</span>
 
-    <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:22px;">
+    <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin:32px 0;">
       <div style="flex:1;height:1px;background:var(--line);"></div>
-      <span style="font-size:.7rem;color:var(--brown-lt);">◆</span>
-      <div style="flex:1;height:1px;background:var(--line);"></div>
-    </div>
-
-    <span style="font-size:.85rem;color:#CCA881;display:block;margin-bottom:28px;">Suivi d'un vin d'honneur à 15h30</span>
-
-    <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:24px;">
-      <div style="flex:1;height:1px;background:var(--line);"></div>
-      <span style="font-size:.7rem;color:var(--brown-lt);">◆</span>
+      <span style="font-size:.82rem;color:var(--brown-lt);">◆</span>
       <div style="flex:1;height:1px;background:var(--line);"></div>
     </div>
 
-    <span style="font-family:'Montaser Arabic',sans-serif;font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.4vw,2rem);font-weight:300;color:var(--brown);letter-spacing:.08em;display:block;">10 SEPTEMBRE 2026</span>
+    <span style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2vw,1.5rem);color:var(--brown);display:block;margin-bottom:8px;">📍 Mairie de Neuilly-sur-Seine</span>
+    <span style="font-size:1rem;color:var(--brown);display:block;margin-bottom:32px;">96 Av. Achille Peretti,<br>92200 Neuilly-sur-Seine</span>
+
+    <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:32px;">
+      <div style="flex:1;height:1px;background:var(--line);"></div>
+      <span style="font-size:.82rem;color:var(--brown-lt);">◆</span>
+      <div style="flex:1;height:1px;background:var(--line);"></div>
+    </div>
+
+    <span style="font-size:1rem;color:#CCA881;display:block;margin-bottom:38px;">Suivi d'un vin d'honneur à 15h30</span>
+
+    <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:32px;">
+      <div style="flex:1;height:1px;background:var(--line);"></div>
+      <span style="font-size:.82rem;color:var(--brown-lt);">◆</span>
+      <div style="flex:1;height:1px;background:var(--line);"></div>
+    </div>
+
+    <span style="font-family:'Montaser Arabic',sans-serif;font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:300;color:var(--brown);letter-spacing:.08em;display:block;">10 SEPTEMBRE 2026</span>
     </div><!-- /border frame -->
     </div><!-- /arch-inner -->
   </div>
@@ -1246,6 +1247,17 @@ function showErr(msg){
     // Sinon on attend que l'image soit prête
     img.addEventListener('load', startSequence);
   }
+})();
+
+// ─── SL-MENU NAVIGATION ───
+(function(){
+  var map={'Mairie':'mairie','Le Mariage':'invitation','Shabbat Hatan':'shabbat','Informations':'vols','RSVP':'rsvp'};
+  document.querySelectorAll('.sl-menu li:not(.on)').forEach(function(li){
+    li.addEventListener('click',function(){
+      var id=map[li.textContent.trim()];
+      if(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});}
+    });
+  });
 })();
 
 // ─── NAV FERMETURE AUTO ───
