@@ -191,7 +191,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
 .ev-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:11px 0;border-bottom:1px solid rgba(196,184,171,.25);}
 .ev-nm{font-size:1rem;color:var(--text-md);}
 .ev-sub{font-size:.85rem;color:var(--brown-lt);display:block;}
-.tg-g{display:flex;gap:7px;}
+.tg-g{display:flex;gap:7px;flex-shrink:0;}
 .tg{padding:7px 18px;font-size:.72rem;letter-spacing:.1em;border:1px solid var(--line);background:none;color:var(--text-md);cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .15s;}
 .tg:hover{border-color:var(--brown);color:var(--brown);}
 .tg.oui{background:var(--brown-dk);border-color:var(--brown-dk);color:var(--white);}
@@ -247,7 +247,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
 .stp-dot.done{background:var(--brown-lt);}
 .stp-viewport{overflow:hidden;position:relative;}
 .stp-track{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1);}
-.stp-step{min-width:100%;flex-shrink:0;padding:0 2px;box-sizing:border-box;overflow-x:hidden;overflow-y:visible;}
+.stp-step{min-width:100%;flex-shrink:0;padding:0 2px;box-sizing:border-box;overflow:visible;}
 .stp-step-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:300;color:var(--brown);margin-bottom:16px;text-align:center;}
 .stp-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;margin-bottom:12px;justify-content:center;width:100%;box-sizing:border-box;}
 .stp-btns .sbm{flex:1 1 auto;min-width:140px;max-width:320px;width:auto;box-sizing:border-box;overflow:visible;white-space:normal;text-overflow:unset;text-align:center;min-height:44px;}
@@ -288,6 +288,11 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   .sl-ttl{font-size:clamp(2rem,3vw,3rem);}
   .sl-menu{font-size:.65rem;letter-spacing:.14em;}
   .arch{padding:70px 48px 70px 80px;}
+  /* RSVP */
+  .ev-row{flex-direction:column;align-items:flex-start;gap:6px;padding:10px 0;}
+  .tg-g{width:auto;flex-shrink:0;}
+  .stp-btns{flex-direction:column;align-items:stretch;}
+  .stp-btns .sbm{max-width:100%;min-width:0;width:100%;min-height:46px;white-space:normal;overflow:visible;text-overflow:unset;}
 }
 
 /* ── IPAD PRO (768px–1024px) ── */
