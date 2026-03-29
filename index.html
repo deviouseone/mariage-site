@@ -247,7 +247,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
 .stp-dot.done{background:var(--brown-lt);}
 .stp-viewport{overflow:hidden;position:relative;}
 .stp-track{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1);}
-.stp-step{min-width:100%;flex-shrink:0;padding:0 2px;box-sizing:border-box;overflow-x:clip;overflow-y:visible;}
+.stp-step{min-width:100%;flex-shrink:0;padding:0 2px;box-sizing:border-box;overflow-x:hidden;overflow-y:visible;}
 .stp-step-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:300;color:var(--brown);margin-bottom:16px;text-align:center;}
 .stp-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;margin-bottom:12px;justify-content:center;width:100%;box-sizing:border-box;}
 .stp-btns .sbm{flex:1 1 auto;min-width:140px;max-width:320px;width:auto;box-sizing:border-box;overflow:visible;white-space:normal;text-overflow:unset;text-align:center;min-height:44px;}
@@ -321,17 +321,15 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   .sh-day{font-size:1.7rem;}
   /* Hotels */
   .h-name{font-size:clamp(1.8rem,3.8vw,3.2rem);}
-  /* Arche RSVP — réduire paddings pour plus d'espace utile */
-  #rsvp .arch{padding:52px 28px 52px 48px;}
   /* RSVP */
   .f-row{grid-template-columns:1fr 1fr;}
   .f-inp,.f-ta,.stp-sel-row select{font-size:16px!important;}
-  .ev-row{flex-direction:column;align-items:flex-start;gap:8px;padding:12px 0;}
+  .ev-row{flex-direction:column;align-items:flex-start;gap:6px;padding:10px 0;}
   .ev-nm{font-size:.9rem;line-height:1.4;}
   .ev-sub{font-size:.78rem;}
-  .tg-g{width:100%;display:flex;gap:8px;}
-  .tg-g .tg{flex:1;justify-content:center;min-height:44px;display:inline-flex;align-items:center;}
-  .tg{font-size:.68rem;}
+  .tg-g{display:flex;gap:8px;width:auto;}
+  .tg-g .tg{min-width:64px;min-height:38px;display:inline-flex;align-items:center;justify-content:center;}
+  .tg{font-size:.67rem;padding:7px 16px;}
   .sbm{min-height:46px;}
   .stp-btns{flex-direction:column;align-items:stretch;}
   .stp-btns .sbm{max-width:100%;min-width:0;width:100%;min-height:46px;white-space:normal;overflow:visible;text-overflow:unset;}
