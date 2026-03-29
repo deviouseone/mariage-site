@@ -335,19 +335,20 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   .sbm{min-height:46px;}
   .stp-btns{flex-direction:column;align-items:stretch;}
   .stp-btns .sbm{max-width:100%;min-width:0;width:100%;min-height:46px;white-space:normal;overflow:visible;text-overflow:unset;}
-  .stp-recap{max-height:40vh;}
-  .stp-recap-tag{white-space:normal;overflow:visible;max-width:none;word-break:break-word;}
+  .stp-recap{max-height:40vh;overflow-y:auto;}
   .stp-recap-nm{font-size:.98rem;}
-  .stp-recap-det{flex-direction:column;align-items:flex-start;gap:3px;}
-  .stp-recap-tag{max-width:100%;overflow:hidden;text-overflow:ellipsis;}
+  .stp-recap-det{flex-direction:column;align-items:flex-start;gap:3px;width:100%;box-sizing:border-box;}
+  .stp-recap-tag{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;box-sizing:border-box;}
   .stp-step-title{font-size:1.15rem;}
-  /* RSVP — padding-left 31% pousse le contenu juste après la courbe 42% sur tous les iPad */
-  #rsvp .arch{padding-left:31%;padding-right:24px;}
-  #rsvp .arch-inner{max-width:100%;}
-  /* ev-rows en colonne car la zone visible est plus étroite */
-  #rsvp .ev-row{flex-direction:column;align-items:flex-start;gap:6px;}
-  #rsvp .tg-g{width:auto;}
+  /* RSVP arch — padding-left 31% dépasse la courbe 42% sur tous les iPad */
+  #rsvp .arch{padding-left:31%;padding-right:28px;}
+  #rsvp .arch-inner{max-width:100%;width:100%;box-sizing:border-box;}
+  #rsvp .stp-viewport{width:100%;box-sizing:border-box;overflow:hidden;}
+  #rsvp .stp-step{box-sizing:border-box;overflow:hidden;}
   #rsvp .f-row{grid-template-columns:1fr;}
+  #rsvp .ev-row{flex-direction:column;align-items:flex-start;gap:6px;}
+  #rsvp .tg-g{width:100%;display:flex;gap:8px;}
+  #rsvp .tg-g .tg{flex:1;text-align:center;justify-content:center;}
 }
 
 /* ── MOBILE TABLET ── */
