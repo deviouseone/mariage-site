@@ -339,9 +339,13 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   .stp-recap-nm{font-size:.98rem;}
   .stp-recap-det{flex-wrap:wrap;gap:4px;}
   .stp-step-title{font-size:1.15rem;}
-  /* RSVP — arch avec courbe réduite pour éviter la coupure du contenu */
-  #rsvp .arch{border-radius:15% 0 0 15% / 12% 0 0 12%;padding-left:110px;padding-right:30px;}
+  /* RSVP — padding-left 31% pousse le contenu juste après la courbe 42% sur tous les iPad */
+  #rsvp .arch{padding-left:31%;padding-right:24px;}
   #rsvp .arch-inner{max-width:100%;}
+  /* ev-rows en colonne car la zone visible est plus étroite */
+  #rsvp .ev-row{flex-direction:column;align-items:flex-start;gap:6px;}
+  #rsvp .tg-g{width:auto;}
+  #rsvp .f-row{grid-template-columns:1fr;}
 }
 
 /* ── MOBILE TABLET ── */
