@@ -339,6 +339,12 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
   .stp-recap-nm{font-size:.98rem;}
   .stp-recap-det{flex-wrap:wrap;gap:4px;}
   .stp-step-title{font-size:1.15rem;}
+  /* RSVP — layout pleine largeur pour éviter la coupure par la courbe de l'arch */
+  #rsvp.slide{flex-direction:column;}
+  #rsvp .sl{width:100%;min-height:auto;padding:40px 28px 24px;align-items:center;text-align:center;}
+  #rsvp .sl .sl-menu{display:none;}
+  #rsvp .arch{border-radius:36px 36px 0 0;margin-left:0;padding:44px 32px 56px;min-height:auto;width:100%;flex:none;}
+  #rsvp .arch-inner{max-width:580px;}
 }
 
 /* ── MOBILE TABLET ── */
