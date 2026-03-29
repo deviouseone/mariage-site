@@ -521,7 +521,7 @@ a.hl-link:hover{opacity:.7;text-decoration:underline;text-underline-offset:3px;}
 
 <!-- ══ HEART OVERLAY ══ -->
 <div class="heart-overlay" id="heartOverlay">
-  <span class="heart-icon">&#10084;</span>
+  <span class="heart-icon">&#10084;&#xFE0E;</span>
 </div>
 
 <!-- ══ HERO ══ -->
@@ -1231,7 +1231,7 @@ function showHeartAnimation(){
   var overlay=document.getElementById('heartOverlay');
   if(!overlay) return;
   // Recréer l'icône pour relancer l'animation
-  overlay.innerHTML='<span class="heart-icon">&#10084;</span>';
+  overlay.innerHTML='<span class="heart-icon">&#10084;&#xFE0E;</span>';
   overlay.classList.add('show');
   setTimeout(function(){ overlay.classList.remove('show'); }, 2900);
 }
